@@ -11,7 +11,6 @@ img {
 }
 
 .firstSection {
-  margin: 0px 0px 0px 0px;
   height: 300px;
   overflow: hidden;
   background-size: cover;
@@ -23,10 +22,32 @@ img {
   padding-top: 40px;
 }
 .jumboL {
-  padding-left: 0px;
-  padding-right: 0px;
   padding-top: 0px;
   box-shadow: 0.1px 0.1px 2px grey !important;
   border-radius: 25px;
   background-color: white;
 }
+
+.hero_btn {
+    border: 1px solid gray;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+  }
+
+  .round_btn {
+    background-color: whitesmoke;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+  }

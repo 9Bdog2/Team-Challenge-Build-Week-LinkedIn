@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { useState, useEffect } from 'react'
 import './Profilejumbotron.css'
 // import { Link } from "react-router-dom";
+import { BsThreeDots } from 'react-icons/bs';
 
 export default function Profilejumbotron() {
 
@@ -48,16 +49,18 @@ export default function Profilejumbotron() {
         </div>
         <span>{data.area}</span>
       </div>
-      <ul className="pb-1" style={{listStyleType: "none"}}>
-        <a>200 connections</a>
-      </ul>
+      <span>
+        <a href="">200 connections</a>
+      </span>
 
       <p>
         {data.bio}
       </p>
-      <p>
-        <Button variant="primary">Learn more</Button>
-      </p>
+      <div>
+        <Button className="hero_btn font-weight-bold" variant="primary">Open to</Button>
+        <Button className="hero_btn mx-2"variant="outline-secondary">Add section</Button>
+        <Button className="round_btn" variant="outline-secondary"><BsThreeDots /></Button>
+      </div>
     </Jumbotron>
   );
 }
