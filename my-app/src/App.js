@@ -42,6 +42,7 @@ function App() {
   </Row>
  
 </Container>
+<BottomFooter/>
 {/* 
 <BottomFooter/> */}
 

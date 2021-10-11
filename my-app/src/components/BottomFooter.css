@@ -1,6 +1,6 @@
 
 .footer_container {
-  position: fixed;
+  
   bottom: 0;
   right: 20%;
   padding-top: 24px;
@@ -10,7 +10,7 @@
 
 
 footer {
-    position: fixed;
+    
     left: 0;
     bottom: 0;
     width: 100%;
