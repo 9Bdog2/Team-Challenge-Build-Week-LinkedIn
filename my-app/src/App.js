@@ -11,6 +11,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Profilejumbotron from './components/Profilejumbotron'
 import { Button } from "react-bootstrap";
+import ExperienceLI from './components/ExperienceLI'
+import Skills from './components/Skills'
 
 
 function App() {
@@ -24,6 +26,10 @@ function App() {
     <Col md={8}>
       
 <Profilejumbotron/>
+<ExperienceLI/>
+<Skills/>
+
+
 
     </Col>
     <Col md={4} >
