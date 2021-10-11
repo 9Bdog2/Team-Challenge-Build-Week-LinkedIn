@@ -34,7 +34,7 @@ export default function Profilejumbotron() {
 
   return (
     <Jumbotron className='jumboL'>
-      <img src={data.image} alt="profile picture"/>
+      <img className='IMAGE' src={data.image} alt="profile picture"/>
       <div className='firstSection'>
         
       </div>
