@@ -1,0 +1,53 @@
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.mainBox{
+    margin-top: 24px;
+    padding: 24px 16px 12px;
+    color: grey;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 15px;
+}
+
+
+
+.listElement{
+    border-width: 0 0 0px;
+    margin-top: 1rem;
+    padding: 0px;
+
+
+}
+
+.listElement a{
+    color: grey;
+}
+.name{
+    font-size: small;
+}
+
+.name > span {
+    color:black;
+    font-weight: 600;
+}
+
+.msgButton{
+    background-color: white;
+    border-radius: 50px;
+    border: 1px solid grey !important;
+    color: rgb(24, 24, 24);
+    font-weight: 600;
+    margin-left: 50px;
+    margin-top: 0px;
+    
+    font-size: small;
+}
+a >p{
+    margin-bottom: 0px;
+    margin-left: 0.5rem;
+}

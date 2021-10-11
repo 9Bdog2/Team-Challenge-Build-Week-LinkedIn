@@ -2,11 +2,14 @@
 import React from "react";
 
 import ListGroup from "react-bootstrap/ListGroup";
+import './PeopleViewed.css'
+
+import               MessageButton from './MessageButton.jsx'
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import Button from 'react-bootstrap/Button'
 
 class PeopleViewed extends React.Component {
 
@@ -29,9 +32,14 @@ class PeopleViewed extends React.Component {
             )
             if(response.ok){
                 let data = await response.json()
+                let fiveUsers = []
+                for(let i=0; i<5; i++){
+                    fiveUsers.push(data[i])
+
+                }
                 
                 this.setState({
-                    fetchedUsers: data
+                    fetchedUsers: fiveUsers
                 })
                 console.log(this.state.fetchedUsers)
                
@@ -55,23 +63,33 @@ class PeopleViewed extends React.Component {
 
   render(){
       return(
-     
-        <ListGroup>
+        <div className="mainBox">
+        <h6>People also viewed
+        </h6>
+        <ListGroup >
             {
                 this.state.fetchedUsers.length>0  &&
                 this.state.fetchedUsers.map(e=>{
-                    <ListGroup.Item>{e.title}</ListGroup.Item>
+                    return <ListGroup.Item className="listElement" key={e._id}>
+                       <a className={'d-flex'}> 
+                       <img src={e.image} />
+                        
+
+                        <p className='name'><span >{e.name + e.surname  }</span>
+                        <p>{e.title} </p>
+                        </p>
+                       </a>
+                    
+                        <MessageButton/>
+                    </ListGroup.Item>
                 })
          
              }
           
-          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-          <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-          <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+          
         </ListGroup>
 
-
+             </div>
 
       
     )
