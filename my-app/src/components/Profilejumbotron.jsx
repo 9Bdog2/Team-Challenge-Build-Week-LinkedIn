@@ -34,20 +34,20 @@ export default function Profilejumbotron() {
 
   return (
     <Jumbotron className='jumboL'>
-      <img className='IMAGE' src={data.image} alt="profile picture"/>
       <div className='firstSection'>
         
       </div>
       
       <div className="mt-2 secondSection">
-        
+      <img className='IMAGE' src={data.image} alt="profile picture"/>
+
         {/* find class for bringing image to front */}
         <h1>{data.name} {data.surname}</h1>
         <div>
           {data.title}
         </div>
-        <span>{data.area}</span>
-      </div>
+        <p>{data.area}</p>
+      
       <ul className="pb-1" style={{listStyleType: "none"}}>
         <a>200 connections</a>
       </ul>
@@ -58,6 +58,7 @@ export default function Profilejumbotron() {
       <p>
         <Button variant="primary">Learn more</Button>
       </p>
+      </div>
     </Jumbotron>
   );
 }
