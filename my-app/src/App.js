@@ -1,3 +1,6 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import TopNavbar from './components/TopNavbar'
+import BottomFooter from './components/BottomFooter'
 
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +14,7 @@ import Profilejumbotron from './components/Profilejumbotron'
 
 function App() {
   return (
+
     <Container  >
   <Row>
     <Col md={8}>
@@ -27,7 +31,11 @@ function App() {
  
 </Container>
 
+
   );
 }
 
+
 export default App;
+
+
