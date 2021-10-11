@@ -6,12 +6,26 @@ const links1 = [
   "About",
   "Community Guidelines",
   "Privacy & Terms",
-  "Sales Solutions",
   "Safety Center",
+];
+
+const links2 = [
+  "Accessibility",
+  "Careers",
+  "Ad Choices",
+  "Mobile",
+  "Sales Solutions",
+];
+
+const links3 = [
+  "Talent Solutions",
+  "Marketing Solutions",
+  "Advertising",
+  "Small Business",
 ];
 function BottomFooter() {
   return (
-    <Container>
+    <Container className="footer_container">
       <Row style={{ color: "black" }}>
         <Col xs={12}>
           <img
@@ -28,19 +42,14 @@ function BottomFooter() {
           ))}
         </Col>
         <Col xs={2} className="d-flex flex-column">
-          <span>Accessibility</span>
-          <span>Careers</span>
-          <span>Ad Choices</span>
-          <span>Mobile</span>
+          {links2.map((link) => (
+            <span>{link}</span>
+          ))}
         </Col>
         <Col xs={2} className="d-flex flex-column">
-          <span>Talent Solutions</span>
-
-          <span>Marketing Solutions</span>
-
-          <span>Advertising</span>
-
-          <span>Small Business</span>
+          {links3.map((link) => (
+            <span>{link}</span>
+          ))}
         </Col>
         <Col xs={3} className="d-flex flex-column">
           <div className="d-flex mb-2 ">
