@@ -13,6 +13,7 @@ import Profilejumbotron from './components/Profilejumbotron'
 import { Button } from "react-bootstrap";
 import ExperienceLI from './components/ExperienceLI'
 import Skills from './components/Skills'
+import Activity from './components/Activity'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     <Col md={8}>
       
 <Profilejumbotron/>
+<Activity/>
 <ExperienceLI/>
 <Skills/>
 
