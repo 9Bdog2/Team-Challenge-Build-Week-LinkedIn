@@ -15,13 +15,12 @@
 
 .firstSection {
   
-  margin: 25px 0px 0px 0px;
-
+  margin-top: 100px;
   height: 300px;
   overflow: hidden;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: white;
+  
+  
   background-image: url("https://picsum.photos/200/300");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
