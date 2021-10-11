@@ -55,8 +55,10 @@ export default function Profilejumbotron() {
       <p>
         {data.bio}
       </p>
-      <p>
-        <Button variant="primary">Learn more</Button>
+      <p className='d-flex buttonGroup'>
+        <Button className='connectButton' variant="primary">Connect</Button>
+        <Button className='msgButton' variant="secondary">Message</Button>
+        <Button className='msgButton' variant="secondary">...</Button>
       </p>
       </div>
     </Jumbotron>

@@ -38,6 +38,32 @@
   background-color: white;
 }
 
-body{
+.buttonGroup button{
+  margin-left: 0.5rem ;
   
+}
+
+.msgButton{
+  background-color: white;
+  border-radius: 50px;
+  border: 1px solid grey !important;
+  color: rgb(24, 24, 24);
+  font-weight: 600;
+  margin-left: 50px;
+  margin-top: 0px;
+  
+  font-size: small;
+}
+
+.connectButton{
+  background-color: #0e76a8;
+  color: white;
+  border-radius: 50px;
+  border: 1px solid #0e76a8 !important;
+ 
+  font-weight: 600;
+  margin-left: 50px;
+  margin-top: 0px;
+  
+  font-size: small;
 }
