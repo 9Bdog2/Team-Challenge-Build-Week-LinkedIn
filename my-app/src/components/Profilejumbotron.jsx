@@ -48,7 +48,7 @@ export default function Profilejumbotron() {
         </div>
         <p>{data.area}</p>
       
-      <ul className="pb-1" style={{listStyleType: "none"}}>
+      <ul  style={{listStyleType: "none"}}>
         <a>200 connections</a>
       </ul>
 
