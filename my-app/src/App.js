@@ -1,3 +1,4 @@
+
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from './components/SideBar'
@@ -33,6 +34,7 @@ function App() {
   </Row>
  
 </Container>
+
   );
 }
 
