@@ -1,10 +1,12 @@
-
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Jumbotron from './components/Profilejumbotron';
 
 
 function App() {
   return (
-    <div >
-      
+    <div>
+      <Jumbotron />
     </div>
   );
 }
