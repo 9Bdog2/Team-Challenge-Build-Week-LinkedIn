@@ -34,7 +34,7 @@ export default function Profilejumbotron() {
   }
 
   return (
-    <Jumbotron className='jumboL'>
+    <Jumbotron className='jumboL shadow-sm p-3 mb-5 bg-white rounded'>
       <img src={data.image} alt="profile picture"/>
       <div className='firstSection'>
         
