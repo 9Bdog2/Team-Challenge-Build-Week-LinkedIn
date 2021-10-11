@@ -11,7 +11,7 @@ function App() {
   return (
     <Container  >
   <Row>
-    <Col md={9}>
+    <Col md={8}>
       
 
     <Card >
@@ -25,7 +25,7 @@ function App() {
   </Card.Body>
 </Card>
     </Col>
-    <Col md={3} >
+    <Col md={4} >
       
     <Sidebar/>
 

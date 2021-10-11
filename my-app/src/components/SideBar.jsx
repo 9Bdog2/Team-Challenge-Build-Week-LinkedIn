@@ -9,9 +9,15 @@ class Sidebar extends React.Component {
   render() {
     return (
       <>
-        <PeopleViewed/>
+        <PeopleViewed title='People also viewed' number={5} />
+
+        <PeopleViewed title='People you may know' number={15}/>
+
+        <div>
 
 
+            
+        </div>
 
       </>
     );

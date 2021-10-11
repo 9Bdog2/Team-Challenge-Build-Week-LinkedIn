@@ -4,17 +4,16 @@ import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import './PeopleViewed.css'
 
-import               MessageButton from './MessageButton.jsx'
+import      MessageButton from './MessageButton.jsx'
 
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from 'react-bootstrap/Button'
 
 class PeopleViewed extends React.Component {
 
     state = {
         fetchedUsers: [],
+        moreUsers: [],
+        clicked: false
+        
 
 
     }
@@ -33,15 +32,21 @@ class PeopleViewed extends React.Component {
             if(response.ok){
                 let data = await response.json()
                 let fiveUsers = []
-                for(let i=0; i<5; i++){
+                let tenUsers =[]
+                for(let i=this.props.number; i<this.props.number + 5; i++){
                     fiveUsers.push(data[i])
+
+                }
+                for(let i=this.props.number; i<this.props.number + 10 ; i++){
+                    tenUsers.push(data[i])
 
                 }
                 
                 this.setState({
-                    fetchedUsers: fiveUsers
+                    fetchedUsers: fiveUsers,
+                    moreUsers: tenUsers,
+                    clicked: false
                 })
-                console.log(this.state.fetchedUsers)
                
             }else{
                 console.log("error");
@@ -64,11 +69,13 @@ class PeopleViewed extends React.Component {
   render(){
       return(
         <div className="mainBox">
-        <h6>People also viewed
+        <h6>{this.props.title}
         </h6>
         <ListGroup >
             {
-                this.state.fetchedUsers.length>0  &&
+            
+               
+                    this.state.fetchedUsers.length>0  &&
                 this.state.fetchedUsers.map(e=>{
                     return <ListGroup.Item className="listElement" key={e._id}>
                        <a className={'d-flex'}> 
@@ -80,13 +87,44 @@ class PeopleViewed extends React.Component {
                         </p>
                        </a>
                     
+                        
                         <MessageButton/>
+                        
+                        
                     </ListGroup.Item>
                 })
+
+                
+                
          
              }
+
+             
+<div className='bgButton'>
+          <a className="showMore" onClick={()=>{
+              
+                if(this.state.clicked===true){
+                    this.fecthUsers()
+                }else{
+                    this.setState({
+                        fetchedUsers: this.state.moreUsers,
+                        clicked: !this.state.clicked
+                    })
+                }
+
+          }
+
           
           
+          
+          }> 
+          
+          
+          
+          {this.state.clicked ? 'Show Less' : 'Show More'} </a>
+
+
+          </div>
         </ListGroup>
 
              </div>
