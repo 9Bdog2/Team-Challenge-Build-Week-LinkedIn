@@ -1,0 +1,32 @@
+.IMAGE {
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  border-color: white;
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 5rem;
+}
+
+.firstSection {
+  margin: 0px 0px 0px 0px;
+  height: 300px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-image: url("https://picsum.photos/200/300");
+}
+.secondSection {
+  padding-top: 40px;
+}
+.jumboL {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  box-shadow: 0.1px 0.1px 2px grey !important;
+  border-radius: 25px;
+  background-color: white;
+}
