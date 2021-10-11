@@ -5,16 +5,20 @@ import BottomFooter from './components/BottomFooter'
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from './components/SideBar'
-import Card from 'react-bootstrap/Card'
+
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Profilejumbotron from './components/Profilejumbotron'
+import { Button } from "react-bootstrap";
 
 
 function App() {
   return (
 
+    <>
+    <TopNavbar/>
+    
     <Container  >
   <Row>
     <Col md={8}>
@@ -30,8 +34,12 @@ function App() {
   </Row>
  
 </Container>
+{/* 
+<BottomFooter/> */}
 
 
+
+</>
   );
 }
 

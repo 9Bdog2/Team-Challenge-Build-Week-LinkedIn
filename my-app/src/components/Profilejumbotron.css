@@ -6,9 +6,9 @@
   border-width: 6px;
   border-style: solid;
   position: absolute;
-  margin-top: 20%;
-  margin-left: 5rem;
-}
+  margin-top:25%;
+  margin-left: 0%;
+} 
 
 .firstSection {
   margin: 0px 0px 0px 0px;
@@ -18,9 +18,15 @@
   background-repeat: no-repeat;
   background-color: white;
   background-image: url("https://picsum.photos/200/300");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 1px solid ;
+  border-bottom: none;
+  
 }
 .secondSection {
   padding-top: 40px;
+  margin-left: 2rem;
 }
 .jumboL {
   padding-left: 0px;
@@ -29,4 +35,8 @@
   box-shadow: 0.1px 0.1px 2px grey !important;
   border-radius: 25px;
   background-color: white;
+}
+
+body{
+  
 }
