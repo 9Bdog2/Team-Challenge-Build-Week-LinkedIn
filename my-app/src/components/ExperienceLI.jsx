@@ -1,4 +1,8 @@
 import React from "react";
+import * as Icon from "react-bootstrap-icons";
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+import ExperienceForm from "./ExperienceForm";
 
 import ListGroup from 'react-bootstrap/ListGroup'
 import './ExperienceLI.css'
@@ -7,7 +11,7 @@ class ExperienceLI extends React.Component {
 
     state={
       fetchedExperience: [],
-
+      showAddExperience: false
     }
 
 
@@ -71,14 +75,7 @@ class ExperienceLI extends React.Component {
 
 
   componentDidMount = () => {
-    let obj = {
-      role: "Web dev",
-      company: "Google",
-      startDate: "2019-06-16",
-      endDate: "2019-06-16", 									// could be null
-      description: "a lot of things",
-      area: "SA"
-  }
+  
     this.fetchData('6163e31ca890cc0015cf07c9')
     // this.addExperiencePost('6163e31ca890cc0015cf07c9', obj )
   }  
@@ -86,8 +83,17 @@ class ExperienceLI extends React.Component {
     return(
 
       <div className="mainBox">
-      <h6>{this.props.title} Experiences 
-      </h6>
+      <div className='d-flex justify-content-between align-items-end '>
+      <h5 className='titleExperience'>{this.props.title} Experiences 
+      </h5>
+      <Icon.Plus  onClick={()=>{
+        this.setState({
+          ...this.state,
+          showAddExperience: true
+        })
+      }} className='iconAddExperience' size={40} />
+      </div>
+
       <ListGroup >
           {
           
@@ -95,13 +101,15 @@ class ExperienceLI extends React.Component {
                   this.state.fetchedExperience.length>0  &&
               this.state.fetchedExperience.map(e=>{
                   return <ListGroup.Item className="listElement" key={e._id}>
-                     <a className={'d-flex'}> 
-                     <img src={e.image} />
+                     <a className={'positionJob'}> 
+                     
                       
 
-                      <p className='name'><span >{e.role +' '+ e.company  }</span>
+                      <h6 className='positionJob'>{e.role}</h6>
+                      <p>{e.company} </p>
+                      <p>{e.startDate+ ' -  '+e.endDate}</p>
                       <p>{e.area} </p>
-                      </p>
+                      
                      </a>
                   
                       
@@ -118,6 +126,33 @@ class ExperienceLI extends React.Component {
 
 
       </ListGroup>
+
+      <>
+      
+
+      <Modal show={this.state.showAddExperience} onHide={()=>{
+        this.setState({
+          ...this.state,
+          showAddExperience: false
+        })
+      }} animation={true}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Experience</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          
+
+          
+        <ExperienceForm/>
+
+
+
+
+
+        </Modal.Body>
+        
+      </Modal>
+    </>
 
            </div>
 
