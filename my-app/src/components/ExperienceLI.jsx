@@ -3,43 +3,28 @@ import * as Icon from "react-bootstrap-icons";
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import ExperienceForm from "./ExperienceForm";
-
+import {
+  BrowserRouter as Router,
+  Link,
+  useLocation
+} from "react-router-dom";
 import ListGroup from 'react-bootstrap/ListGroup'
 import './ExperienceLI.css'
+import EditExperienceForm from './EditExperienceForm'
 
 class ExperienceLI extends React.Component {
 
     state={
       fetchedExperience: [],
-      showAddExperience: false
+      showAddExperience: false,
+      showEditExperience: false,
+      selectedExperience: ''
+      
     }
 
 
   
-    addExperiencePost = async (query, exp) => {
-      
-      try {
-        const response = await fetch(
-          "https://striveschool-api.herokuapp.com/api/profile/"+query+"/experiences",
-          {
-            method: "POST",
-            body: JSON.stringify(exp),
-            headers: new Headers({
-              "Content-Type": "application/json",
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
-            }),
-          }
-        );
-        if (response.ok) {
-          this.fetchData();
-        } else {
-          console.log(response);
-        }
-      } catch (e) {
-        console.log(e);
-      }
-    }
+
 
   fetchData = async (query) =>{
     const url = 'https://striveschool-api.herokuapp.com/api/profile/'+query+'/experiences'
@@ -93,7 +78,7 @@ class ExperienceLI extends React.Component {
         })
       }} className='iconAddExperience' size={40} />
       </div>
-
+      <Router>
       <ListGroup >
           {
           
@@ -101,7 +86,13 @@ class ExperienceLI extends React.Component {
                   this.state.fetchedExperience.length>0  &&
               this.state.fetchedExperience.map(e=>{
                   return <ListGroup.Item className="listElement" key={e._id}>
-                     <a className={'positionJob'}> 
+                    <Link to={"/id?=" + e._id}>
+                     <a  className={'positionJob'} onClick={()=>{
+                       this.setState({
+                         ...this.state,
+                         showEditExperience: true
+                       })
+                     }} > 
                      
                       
 
@@ -115,7 +106,7 @@ class ExperienceLI extends React.Component {
                       
                      
                       
-                      
+                     </Link>
                   </ListGroup.Item>
               })
 
@@ -126,9 +117,33 @@ class ExperienceLI extends React.Component {
 
 
       </ListGroup>
+      </Router>
 
       <>
       
+
+      <Modal show={this.state.showEditExperience} onHide={()=>{
+        this.setState({
+          ...this.state,
+          showEditExperience: false
+        })
+      }} animation={true}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Experience</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          
+
+          
+       
+        <EditExperienceForm/>
+
+
+
+
+        </Modal.Body>
+        
+      </Modal>
 
       <Modal show={this.state.showAddExperience} onHide={()=>{
         this.setState({
@@ -143,6 +158,7 @@ class ExperienceLI extends React.Component {
           
 
           
+        
         <ExperienceForm/>
 
 
