@@ -14,6 +14,7 @@ import { Button } from "react-bootstrap";
 import ExperienceLI from './components/ExperienceLI'
 import Skills from './components/Skills'
 import Activity from './components/Activity'
+import Interests from "./components/Interests";
 
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
 <Activity/>
 <ExperienceLI/>
 <Skills/>
+<Interests/>
+
 
 
 
