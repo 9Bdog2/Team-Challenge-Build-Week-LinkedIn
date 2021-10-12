@@ -1,0 +1,40 @@
+.popupbox {
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  width: 100%;
+  height: 50vh;
+
+  padding: 20px;
+
+  background-color: rgb(174, 217, 228);
+  z-index: 30;
+
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.popup-inner {
+  position: relative;
+  margin-top: 32px;
+  padding: 20px;
+  width: 100%;
+  max-width: 640px;
+  background-color: rgb(240, 229, 229);
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+}
+.cross-btn:hover {
+  background-color: rgb(215, 214, 218);
+  border-radius: 50%;
+  padding: 5px;
+}
+.name {
+  position: absolute;
+  left: 10%;
+  top: 60px;
+}

@@ -1,6 +1,9 @@
-import { Card, Button, Dropdown } from "react-bootstrap";
+import { Card, Button, Dropdown, Form } from "react-bootstrap";
+import PopUpBox from "./PopUpBox";
+import { useState } from "react";
 
-const Activity = () => {
+function Activity() {
+  const [buttonPopUp, setButtonPopUpBox] = useState(false);
   return (
     <>
       <Card
@@ -14,9 +17,50 @@ const Activity = () => {
             size="sm"
             className=""
             style={{ marginLeft: "75%" }}
+            onClick={() => setButtonPopUpBox(true)}
           >
             Start a post
           </Button>{" "}
+          <PopUpBox trigger={buttonPopUp} setTrigger={setButtonPopUpBox}>
+            <hr
+              style={{
+                color: "black",
+                backgroundColor: "black",
+                padding: 0,
+                marginBottom: 5,
+                margin: 0,
+                height: 0.2,
+              }}
+            />
+            <img
+              src="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png"
+              alt="Profile image"
+              width="50px"
+            />
+            <div className="name">
+              {" "}
+              XYZ
+              <Dropdown.Toggle
+                variant="outline-secondary"
+                id="dropdown-basic"
+                style={{ margin: "10px" }}
+              >
+                {" "}
+                <i class="fas fa-globe-asia">Anyone </i>
+              </Dropdown.Toggle>
+            </div>
+            <Form.Group
+              controlId="exampleForm.ControlTextarea1"
+              className="pt-2"
+            >
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="What do you want to talk about?"
+              />
+            </Form.Group>
+            <Button variant="outline-primary">Add Hashtag</Button>
+          </PopUpBox>
         </Card.Body>
 
         <p className="ml-2 pl-1 pr-1">
@@ -33,5 +77,5 @@ const Activity = () => {
       </Card>
     </>
   );
-};
+}
 export default Activity;
