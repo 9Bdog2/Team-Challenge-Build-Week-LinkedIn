@@ -11,7 +11,31 @@ class ExperienceLI extends React.Component {
     }
 
 
-
+  
+    addExperiencePost = async (query, exp) => {
+      
+      try {
+        const response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/profile/"+query+"/experiences",
+          {
+            method: "POST",
+            body: JSON.stringify(exp),
+            headers: new Headers({
+              "Content-Type": "application/json",
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
+            }),
+          }
+        );
+        if (response.ok) {
+          this.fetchData();
+        } else {
+          console.log(response);
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
 
   fetchData = async (query) =>{
     const url = 'https://striveschool-api.herokuapp.com/api/profile/'+query+'/experiences'
@@ -19,7 +43,7 @@ class ExperienceLI extends React.Component {
         let response = await fetch(url, {
             method: 'GET',
             headers: {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTY1M2RjMmEwMjlmNTAwMTU3YzVhYzEiLCJpYXQiOjE2MzQwMjQ4OTgsImV4cCI6MTYzNTIzNDQ5OH0.2KFhYiMME1l87hLbFrmt3vhJkFLswovXieLuT8OMPbE",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
         'Content-Type': 'application/json',
     }
         }
@@ -44,14 +68,25 @@ class ExperienceLI extends React.Component {
 
 }
 
+
+
   componentDidMount = () => {
-    this.fetchData('5d925e677360c41e0046d1f5')
+    let obj = {
+      role: "Web dev",
+      company: "Google",
+      startDate: "2019-06-16",
+      endDate: "2019-06-16", 									// could be null
+      description: "a lot of things",
+      area: "SA"
+  }
+    this.fetchData('6163e31ca890cc0015cf07c9')
+    // this.addExperiencePost('6163e31ca890cc0015cf07c9', obj )
   }  
   render(){
     return(
 
       <div className="mainBox">
-      <h6>{this.props.title}
+      <h6>{this.props.title} Experiences 
       </h6>
       <ListGroup >
           {
@@ -64,8 +99,8 @@ class ExperienceLI extends React.Component {
                      <img src={e.image} />
                       
 
-                      <p className='name'><span >{e.name + e.surname  }</span>
-                      <p>{e.title} </p>
+                      <p className='name'><span >{e.role +' '+ e.company  }</span>
+                      <p>{e.area} </p>
                       </p>
                      </a>
                   
