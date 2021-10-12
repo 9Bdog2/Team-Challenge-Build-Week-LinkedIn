@@ -1,0 +1,13 @@
+.block{
+    margin-top: 1rem;
+    
+   
+    padding: 24px 16px 12px;
+    color: grey;
+    border-width: 0px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 15px;
+    box-shadow: 0px 0px 2px grey;
+    background-color: white;
+}
