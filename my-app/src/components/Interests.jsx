@@ -45,7 +45,7 @@ function Interests() {
             <Container>
               <Row>
                 {companies.map((link, i) => (
-                  <Col md={6}>
+                  <Col md={6} key={i}>
                     <div className="interests_container">
                       <img
                         src={Urls[i]}
