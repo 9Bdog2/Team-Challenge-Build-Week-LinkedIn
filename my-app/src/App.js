@@ -14,26 +14,31 @@ import Skills from "./components/Skills";
 import Activity from "./components/Activity";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
+const ProfileView = () => (
+  <Container>
+    <Row>
+      <Col md={8}>
+        <Profilejumbotron />
+        <Activity />
+        <ExperienceLI />
+        <Skills />
+      </Col>
+      <Col md={4}>
+        <Sidebar />
+      </Col>
+    </Row>
+  </Container>
+);
+
 function App() {
   return (
     <>
-      <TopNavbar />
+      <Router>
+        <TopNavbar />
+        <Route path="/user/:id" component={ProfileView} />
 
-      <Container>
-        <Row>
-          <Col md={8}>
-            <Profilejumbotron />
-            <Activity />
-            <ExperienceLI />
-            <Skills />
-          </Col>
-          <Col md={4}>
-            <Sidebar />
-          </Col>
-        </Row>
-      </Container>
-      
-      <BottomFooter />
+        <BottomFooter />
+      </Router>
     </>
   );
 }

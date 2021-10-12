@@ -4,6 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import "./PeopleViewed.css";
 
 import MessageButton from "./MessageButton.jsx";
+import { Link } from "react-router-dom";
 
 class PeopleViewed extends React.Component {
   state = {
@@ -60,14 +61,14 @@ class PeopleViewed extends React.Component {
             this.state.fetchedUsers.map((e) => {
               return (
                 <ListGroup.Item className="listElement" key={e._id}>
-                  <a className={"d-flex"}>
+                  <Link className={"d-flex"} to={`/user/${e._id}`}>
                     <img src={e.image} />
 
                     <p className="name">
                       <span>{e.name + e.surname}</span>
                       <p>{e.title} </p>
                     </p>
-                  </a>
+                  </Link>
 
                   <MessageButton />
                 </ListGroup.Item>
