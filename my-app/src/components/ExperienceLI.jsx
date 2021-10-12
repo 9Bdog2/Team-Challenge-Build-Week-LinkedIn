@@ -19,7 +19,6 @@ class ExperienceLI extends React.Component {
       showAddExperience: false,
       showEditExperience: false,
       selectedExperience: ''
-      
     }
 
 
@@ -57,6 +56,11 @@ class ExperienceLI extends React.Component {
 
 }
 
+getParams =() => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id')
+   return id
+}
 
 
   componentDidMount = () => {
@@ -64,7 +68,10 @@ class ExperienceLI extends React.Component {
     this.fetchData('6163e31ca890cc0015cf07c9')
     // this.addExperiencePost('6163e31ca890cc0015cf07c9', obj )
   }  
-  render(){
+  render()
+  { 
+    
+
     return(
 
       <div className="mainBox">
@@ -81,17 +88,22 @@ class ExperienceLI extends React.Component {
       <Router>
       <ListGroup >
           {
-          
+           
              
                   this.state.fetchedExperience.length>0  &&
               this.state.fetchedExperience.map(e=>{
                   return <ListGroup.Item className="listElement" key={e._id}>
-                    <Link to={"/id?=" + e._id}>
+
+            
+                    <Link to={"/?id=" + e._id}>
                      <a  className={'positionJob'} onClick={()=>{
                        this.setState({
                          ...this.state,
-                         showEditExperience: true
+                         showEditExperience: true,
+                         selectedExperience: this.getParams()
                        })
+                       console.log( this.getParams())
+                       
                      }} > 
                      
                       
@@ -136,7 +148,7 @@ class ExperienceLI extends React.Component {
 
           
        
-        <EditExperienceForm/>
+        <EditExperienceForm id={this.state.selectedExperience}/>
 
 
 

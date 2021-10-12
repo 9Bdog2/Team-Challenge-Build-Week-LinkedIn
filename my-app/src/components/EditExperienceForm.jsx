@@ -32,7 +32,7 @@ class EditExperienceForm extends React.Component {
             }
           );
           if (response.ok) {
-            console.log('posted')
+            console.log(this.props.id)
           } else {
             console.log(response);
           }
@@ -52,6 +52,42 @@ class EditExperienceForm extends React.Component {
         
 
   }
+
+  deleteExperience = async (queryExperienceId, queryUserId ='6163e31ca890cc0015cf07c9' ) => {
+      
+    try {
+      const response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/"+queryUserId+"/experiences/"+queryExperienceId,
+        {
+          method: "DELETE",
+          headers: new Headers({
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
+          }),
+        }
+      );
+      if (response.ok) {
+        console.log(this.props.id)
+      } else {
+        console.log(response);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  handleInput = (key, value) =>{
+  
+    this.setState({
+        addExperience: {
+            ...this.state.addExperience,
+            [key]:value,
+        }
+    })
+    
+
+}
 
   render() {
     return (
@@ -124,10 +160,18 @@ class EditExperienceForm extends React.Component {
           <Button
             variant="primary"
             onClick={() => {
-              this.editExperience(this.state.addExperience,  '61654628a029f500157c5ace');
+              this.editExperience(this.state.addExperience,  this.props.id);
             }}
           >
             Save
+          </Button>
+          <Button
+            variant="danger"
+            onClick={() => {
+              this.deleteExperience(this.props.id);
+            }}
+          >
+            Delete
           </Button>
         </Form>
       </>
