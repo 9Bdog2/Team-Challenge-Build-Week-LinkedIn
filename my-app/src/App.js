@@ -16,6 +16,8 @@ import Activity from "./components/Activity";
 import Interests from "./components/Interests";
 import Article from "./components/Article";
 
+import PostFeedComponent from "./components/PostFeedComponent";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const ProfileView = () => (
@@ -25,6 +27,7 @@ const ProfileView = () => (
         <Profilejumbotron />
         <Activity />
         <ExperienceLI />
+        <Interests />
         <Skills />
         <Interests />
       </Col>
@@ -40,10 +43,31 @@ function App() {
     <>
       <Router>
         <TopNavbar />
+
         <Route path="/user/:id" component={ProfileView} />
+
+
+        <Container>
+          <Row>
+          <Col  xs={3}>
+           
+
+            </Col>
+          
+          <Col className='justify-content-center align-items-center d-flex' xs={6}>
+            <PostFeedComponent />
+             <Article />
         
-        <Article />
-        
+
+            </Col>
+
+            <Col  xs={3}>
+           
+
+            </Col>
+          </Row>
+        </Container>
+
         <BottomFooter />
       </Router>
     </>
@@ -51,5 +75,3 @@ function App() {
 }
 
 export default App;
-
-
