@@ -18,14 +18,14 @@ export default function FeedLeftSide() {
     fetchProfile();
   }, []);
 
-  useEffect(() => {
-    fetchProfile();
-  }, [params.id]);
+//   useEffect(() => {
+//     fetchProfile();
+//   }, [params.id]);
 
   const fetchProfile = async () => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${params.id}`,
+        `https://striveschool-api.herokuapp.com/api/profile/me`,
         {
           headers: {
             Authorization:
@@ -49,10 +49,12 @@ export default function FeedLeftSide() {
     <Container className="mt-5">
       <Row>
         <Col xs={6} md={4}>
-          <Card>
-            <Card.Img variant="top" src={data.image} />
-            <Card.Body>
-              <Card.Title><p>{data.name} {data.surname}</p></Card.Title>
+          <Card className="mainBox">
+            <Card.Img variant="top" src="https://picsum.photos/200/300?grayscale" />
+            <Card.Body className=" cardProfile 
+">
+                <img className="imgUser imgProfileSidebar" src={data.image} alt="" />
+              <Card.Title style = {{color: "black"}}><p>{data.name} {data.surname}</p></Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.

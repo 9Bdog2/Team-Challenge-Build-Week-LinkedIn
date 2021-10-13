@@ -45,6 +45,17 @@
   margin-left: 0.5rem ;
   
 }
+.cardProfile{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgProfileSidebar{
+  margin-top: -30%;
+  border:3px solid white;
+}
 
 .msgButton{
   background-color: white;
