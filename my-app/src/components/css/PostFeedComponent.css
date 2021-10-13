@@ -35,3 +35,17 @@ img {
 
 
 }
+.postButton:hover{
+    background-color: rgb(70, 70, 70);
+    color: black;
+    border: 1px solid grey;
+    width: 100%;
+}
+.postButton:focus{
+    border-radius: 35px !important;
+    color: black;
+    background-color: lightgrey;
+    border: 1px solid grey;
+    width: 100%;
+    box-shadow: none;
+}
