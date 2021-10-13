@@ -30,7 +30,10 @@ const ProfileView = () => (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Interests />
+=======
+>>>>>>> parent of ef8409f (Merge branch 'developer-branch' of https://github.com/9Bdog2/Team-Challenge-Build-Week-LinkedIn into developer-branch)
 =======
 >>>>>>> parent of ef8409f (Merge branch 'developer-branch' of https://github.com/9Bdog2/Team-Challenge-Build-Week-LinkedIn into developer-branch)
 =======
