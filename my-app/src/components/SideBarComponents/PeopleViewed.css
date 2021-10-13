@@ -1,0 +1,103 @@
+h6{
+    margin-left: 1rem;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.mainBox{
+    margin-top: 100px;
+   
+    padding: 24px 16px 12px;
+    color: grey;
+    border-width: 0px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 15px;
+    box-shadow: 0px 0px 2px grey;
+    background-color: white;
+    
+}
+
+
+
+.listElement{
+    border-width: 0 0 0px;
+    margin-top: 1rem;
+    padding: 0px;
+    cursor: pointer;
+
+
+}
+
+.listElement a{
+    color: grey;
+}
+.name{
+    font-size: small;
+}
+
+.name > span {
+    color:black;
+    font-weight: 600;
+}
+
+.msgButton{
+    background-color: white;
+    border-radius: 50px;
+    border: 1px solid grey !important;
+    color: rgb(24, 24, 24);
+    font-weight: 600;
+    margin-left: 50px;
+    margin-top: 0px;
+    
+    font-size: small;
+}
+a >p{
+    margin-bottom: 0px;
+    margin-left: 0.5rem;
+    margin-bottom: 0px;
+}
+
+a > p >p{
+    margin-bottom: 0px;
+
+}
+.showMore{
+    color: rgb(24, 24, 24);
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    margin: auto;
+
+}
+
+.bgButton{
+    border: none;
+  
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    display: inline-flex;
+    justify-content: center;
+    min-width: 6.4rem;
+    max-width: 480px;
+  
+    /* border-radius: 15px ; */
+    text-align: center;
+
+    vertical-align: middle; 
+
+}
+
+
+
+.showMore:hover{
+    color: rgb(24, 24, 24);
+    
+   
+}

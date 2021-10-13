@@ -1,0 +1,38 @@
+/* TopNavbar
+-------------------------------- */
+.top_icons_container{
+    text-align: center;
+}
+
+
+.top_icons {
+    width: 25px;
+    height: 25px;
+  }
+ 
+  
+  .top_link_container {
+      padding: 0;
+  }
+
+  .border-md-left {
+    border-left: 1px solid silver;
+  }
+  /* -------------------------------- */
+
+  .iconsNavbar{
+    align-items: center;
+    color: grey;
+    font-size: 10px;
+    margin-bottom: 0px;
+    align-items: center;
+  }
+
+  .NavbarSizing{
+    z-index: 30;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 0px 1px grey;
+
+  }

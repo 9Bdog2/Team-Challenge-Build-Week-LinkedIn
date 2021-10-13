@@ -14,7 +14,11 @@ import ExperienceLI from "./components/ExperienceLI";
 import Skills from "./components/Skills";
 import Activity from "./components/Activity";
 import Interests from "./components/Interests";
+<<<<<<< HEAD
 import PostFeedComponent from "./components/PostFeedComponent";
+=======
+import Article from "./components/Article";
+>>>>>>> parent of 02dda6e (Merge branch 'developer-branch' into article-component)
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -29,6 +33,7 @@ const ProfileView = () => (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Interests />
 =======
 >>>>>>> parent of ef8409f (Merge branch 'developer-branch' of https://github.com/9Bdog2/Team-Challenge-Build-Week-LinkedIn into developer-branch)
@@ -38,6 +43,8 @@ const ProfileView = () => (
 >>>>>>> parent of ef8409f (Merge branch 'developer-branch' of https://github.com/9Bdog2/Team-Challenge-Build-Week-LinkedIn into developer-branch)
 =======
 >>>>>>> parent of ef8409f (Merge branch 'developer-branch' of https://github.com/9Bdog2/Team-Challenge-Build-Week-LinkedIn into developer-branch)
+=======
+>>>>>>> parent of 02dda6e (Merge branch 'developer-branch' into article-component)
         <Skills />
         <Interests />
       </Col>
@@ -53,8 +60,8 @@ function App() {
     <>
       <Router>
         <TopNavbar />
-
         <Route path="/user/:id" component={ProfileView} />
+<<<<<<< HEAD
 
         <Container>
           <Row>
@@ -75,6 +82,11 @@ function App() {
           </Row>
         </Container>
 
+=======
+        
+        <Article />
+        
+>>>>>>> parent of 02dda6e (Merge branch 'developer-branch' into article-component)
         <BottomFooter />
       </Router>
     </>
@@ -82,3 +94,5 @@ function App() {
 }
 
 export default App;
+
+
