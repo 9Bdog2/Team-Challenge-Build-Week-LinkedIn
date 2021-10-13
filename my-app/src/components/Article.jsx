@@ -1,10 +1,42 @@
 import * as Icon from "react-bootstrap-icons";
 import small_profile_picture from "../assets/small_profile_picture.jpg";
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+
+
 // import "./Article.css";
 
-
 function Article() {
+  
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const fetchPosts = async () => {
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts/5fc6ba2a0626b5001729ee1d`,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
+          },
+        }
+      );
+      if (response.ok) {
+        let data = await response.json();
+        console.log(data);
+        setData(data);
+      } else {
+        console.log("Something went wrong with the Posts request");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Container className="">
@@ -32,7 +64,7 @@ function Article() {
                 <div>
                   <span>
                     <img
-                      src={small_profile_picture}
+                      src=""
                       className="logo"
                       width={25}
                       height={25}
@@ -44,7 +76,7 @@ function Article() {
               <Col md={9} style={{ fontSize: " 12px" }}>
                 <div>
                   <p>
-                    <b>John Smith</b>
+                    <b>{data.username}</b>
                     &bull;
                     <small>2nd</small>
                   </p>
@@ -52,7 +84,7 @@ function Article() {
                 <div>
                   <p>
                     <p>
-                      <small>Global Head of Communications and PR</small>{" "}
+                      <small></small>{" "}
                     </p>
                   </p>
                 </div>
@@ -72,10 +104,7 @@ function Article() {
           </Card.Body>
           <Card.Body>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam
-              mollitia libero, distinctio esse exercitationem nostrum sint
-              eligendi expedita ex natus placeat explicabo, est blanditiis dicta
-              repellat consectetur, necessitatibus eius voluptatibus!
+              {data.text}
               <button type="button" className="btn btn-light">
                 <small>...see more</small>
               </button>
