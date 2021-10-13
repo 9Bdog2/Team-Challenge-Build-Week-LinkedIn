@@ -14,6 +14,7 @@ import ExperienceLI from "./components/ExperienceLI";
 import Skills from "./components/Skills";
 import Activity from "./components/Activity";
 import Interests from "./components/Interests";
+import Article from "./components/Article";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -40,7 +41,9 @@ function App() {
       <Router>
         <TopNavbar />
         <Route path="/user/:id" component={ProfileView} />
-
+        
+        <Article />
+        
         <BottomFooter />
       </Router>
     </>
