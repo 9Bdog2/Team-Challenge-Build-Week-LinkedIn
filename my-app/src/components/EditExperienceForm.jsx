@@ -12,7 +12,44 @@ class EditExperienceForm extends React.Component {
             endDate: "", 									
             description: "",
             area: ''
+        },
+        currentId: this.props.id,
+        currenExperience: {}
+
+    }
+
+
+
+    getExperience = async (query) =>{
+        const url = 'https://striveschool-api.herokuapp.com/api/profile/'+'6163e31ca890cc0015cf07c9'+'/experiences/'+query
+        try{
+            let response = await fetch(url, {
+                method: 'GET',
+                headers: {
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
+            'Content-Type': 'application/json',
         }
+            }
+            )
+            if(response.ok){
+                let data = await response.json()
+            
+                
+                this.setState({
+                    ...this.state,
+                    addExperience: data
+                    
+                })
+                
+               
+            }else{
+                console.log("error");
+        }
+    
+        }
+        catch (error) {
+            console.log(error);
+          }
 
     }
 
@@ -89,6 +126,23 @@ class EditExperienceForm extends React.Component {
 
 }
 
+componentDidUpdate =(prevProps ) =>{
+
+    if(prevProps !== this.props){
+        this.getExperience(this.props.id)
+
+        
+
+    }
+
+}
+
+componentDidMount = () =>{
+    this.getExperience(this.props.id)
+
+
+}
+
   render() {
     return (
       <>
@@ -97,8 +151,12 @@ class EditExperienceForm extends React.Component {
             <Form.Label>Role</Form.Label>
             <Form.Control
               onChange={(e) => {
+                  console.log(this.props.id)
                 this.handleInput("role", e.target.value);
               }}
+              value={this.state.addExperience.role}
+              
+            
               type="text"
               placeholder="QA Engineer"
             />
@@ -110,6 +168,7 @@ class EditExperienceForm extends React.Component {
               onChange={(e) => {
                 this.handleInput("company", e.target.value);
               }}
+              value={this.state.addExperience.company}
               type="text"
               placeholder="Facebook inc."
             />
@@ -121,6 +180,7 @@ class EditExperienceForm extends React.Component {
               onChange={(e) => {
                 this.handleInput("startDate", e.target.value);
               }}
+              value={this.state.addExperience.startDate}
               type="date"
             />
           </Form.Group>
@@ -131,6 +191,8 @@ class EditExperienceForm extends React.Component {
               onChange={(e) => {
                 this.handleInput("endDate", e.target.value);
               }}
+              value={this.state.addExperience.endDate}
+
               type="date"
             />
           </Form.Group>
@@ -142,6 +204,8 @@ class EditExperienceForm extends React.Component {
                 this.handleInput("description", e.target.value);
               }}
               type="text"
+              value={this.state.addExperience.description}
+
               placeholder="Changing vanilla JS to React components"
             />
           </Form.Group>
@@ -152,6 +216,8 @@ class EditExperienceForm extends React.Component {
               onChange={(e) => {
                 this.handleInput("area", e.target.value);
               }}
+              value={this.state.addExperience.area}
+
               type="text"
               placeholder="SA, California"
             />
