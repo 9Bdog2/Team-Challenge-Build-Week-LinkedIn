@@ -49,6 +49,7 @@ img {
     width: 100%;
     box-shadow: none;
 }
+
 .form{
     border: none;
     width: 100%;
@@ -81,4 +82,13 @@ img {
     margin-top: 0px;
    
     font-size: small;
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 5000px)  {
+    .modal1{
+        border: none;
+        width: 100%;
+        max-width: 1000px;
+    }
+    
   }
