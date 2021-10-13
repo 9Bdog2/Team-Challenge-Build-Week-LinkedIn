@@ -1,9 +1,9 @@
 .leftcomponent {
-    position: absolute;
-    padding: 10px;
-    left: 60%;
-    top: 2%;
-    width: 25%;
+   
+    
+    margin-top: 100px;
+
+   
     border-radius: 10px;
     background-color: hsl(267, 31%, 94%);
   }

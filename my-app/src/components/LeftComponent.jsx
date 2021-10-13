@@ -3,7 +3,7 @@ import "./LeftComponent.css";
 
 const LeftComponent = () => {
   return (
-    <div className="mainBox">
+    <div className="leftcomponent">
       <div className="addfeed">
         <h6>Add your feed</h6>
 
