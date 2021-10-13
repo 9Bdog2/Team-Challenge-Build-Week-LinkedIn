@@ -25,6 +25,7 @@ const ProfileView = () => (
         <Activity />
         <ExperienceLI />
         <Skills />
+        <Interests />
       </Col>
       <Col md={4}>
         <Sidebar />
