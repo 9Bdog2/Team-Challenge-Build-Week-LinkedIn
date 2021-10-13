@@ -3,11 +3,9 @@ import small_profile_picture from "../assets/small_profile_picture.jpg";
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-
 // import "./Article.css";
 
 function Article() {
-  
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -17,7 +15,7 @@ function Article() {
   const fetchPosts = async () => {
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/5fc6ba2a0626b5001729ee1d`,
+        `https://striveschool-api.herokuapp.com/api/posts/`,
         {
           headers: {
             Authorization:
@@ -39,6 +37,7 @@ function Article() {
 
   return (
     <>
+       {data.slice(0, 8).map((element,i) => (
       <Container className="">
         <Card>
           <Card.Body className=" ">
@@ -58,25 +57,19 @@ function Article() {
               </Col>
             </Row>
           </Card.Body>
-          <Card.Body className=" " style={{ fontSize: "20px" }}>
+          <Card.Body  style={{ fontSize: "20px" }}>
             <Row>
               <Col md={1}>
                 <div>
                   <span>
-                    <img
-                      src=""
-                      className="logo"
-                      width={25}
-                      height={25}
-                      alt="profile"
-                    />
+                    <img src={data[i].user.image} width={25} height={25} alt="profile" />
                   </span>
                 </div>
               </Col>
               <Col md={9} style={{ fontSize: " 12px" }}>
                 <div>
                   <p>
-                    <b>{data.username}</b>
+                    <b>{data[i].username}</b>
                     &bull;
                     <small>2nd</small>
                   </p>
@@ -84,7 +77,7 @@ function Article() {
                 <div>
                   <p>
                     <p>
-                      <small></small>{" "}
+                      <small>{data[i].user.title}</small>{" "}
                     </p>
                   </p>
                 </div>
@@ -104,7 +97,7 @@ function Article() {
           </Card.Body>
           <Card.Body>
             <p>
-              {data.text}
+              {data[i].text}
               <button type="button" className="btn btn-light">
                 <small>...see more</small>
               </button>
@@ -169,6 +162,7 @@ function Article() {
           </Row>
         </Card>
       </Container>
+       )) } 
     </>
   );
 }
