@@ -16,6 +16,9 @@ import Activity from "./components/Activity";
 import Interests from "./components/Interests";
 import PostFeedComponent from "./components/PostFeedComponent";
 
+import Article from "./components/Article";
+
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const ProfileView = () => (
@@ -52,7 +55,14 @@ function App() {
             </Col>
           
           <Col className='justify-content-center align-items-center d-flex' xs={6}>
-            <PostFeedComponent />
+           <Row>
+            < Col xs={12}>
+           <PostFeedComponent />
+           </Col>
+           <Article />
+           </Row>
+          
+
 
             </Col>
 
