@@ -1,0 +1,34 @@
+body {
+  background-color: rgb(147, 174, 199);
+}
+
+.Activity {
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 30%;
+  height: 250px;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.plus-icon:hover {
+  background-color: rgb(215, 214, 218);
+  border-radius: 50%;
+}
+
+.ExperienceLI {
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 30%;
+}
+
+.Skills {
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 30%;
+}
+
+.QuizButton {
+}
