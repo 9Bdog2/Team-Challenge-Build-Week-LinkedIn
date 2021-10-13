@@ -40,3 +40,28 @@
 body{
   background-color: #f3f2ef;
 }
+
+.msgButton{
+  background-color: white;
+  border-radius: 50px;
+  border: 1px solid grey !important;
+  color: rgb(24, 24, 24);
+  font-weight: 600;
+  margin-left: 50px;
+  margin-top: 0px;
+  
+  font-size: small;
+}
+
+.connectButton{
+  background-color: #0e76a8;
+  color: white;
+  border-radius: 50px;
+  border: 1px solid #167ead !important;
+ 
+  font-weight: 600;
+  margin-left: 50px;
+  margin-top: 0px;
+  
+  font-size: small;
+}
