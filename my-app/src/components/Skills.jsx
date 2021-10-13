@@ -53,9 +53,9 @@ const Skills = () => {
           </Card.Body>
           <ListGroup variant="flush">
             {
-              data.map((element) => (
+              data.slice(0, 8).map((element) => (
 
-                <ListGroup.Item key={element._id}>{element.image}</ListGroup.Item>
+                <ListGroup.Item key={element._id}><img src={element.image} alt="user profile"></img></ListGroup.Item>
               ))
             }
           </ListGroup>
