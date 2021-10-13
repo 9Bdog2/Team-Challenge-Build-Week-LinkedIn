@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import TopNavbar from "./components/TopNavbar";
 import BottomFooter from "./components/BottomFooter";
 import React from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from "./components/SideBar";
 import "./App.css";
@@ -12,6 +13,8 @@ import Profilejumbotron from "./components/Profilejumbotron";
 import ExperienceLI from "./components/ExperienceLI";
 import Skills from "./components/Skills";
 import Activity from "./components/Activity";
+import Interests from "./components/Interests";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const ProfileView = () => (
@@ -44,3 +47,5 @@ function App() {
 }
 
 export default App;
+
+
