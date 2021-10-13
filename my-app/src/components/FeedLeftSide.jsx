@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { FcBookmark } from 'react-icons/fc'
 
 export default function FeedLeftSide() {
   const params = useParams();
@@ -50,24 +51,23 @@ export default function FeedLeftSide() {
       <Row>
         <Col xs={6} md={4}>
           <Card className="mainBox">
-            <Card.Img variant="top" src="https://picsum.photos/200/300?grayscale" />
+            <Card.Img className="img-fluid" variant="top" src="https://picsum.photos/203/54?grayscale" />
             <Card.Body className=" cardProfile 
 ">
                 <img className="imgUser imgProfileSidebar" src={data.image} alt="" />
               <Card.Title style = {{color: "black"}}><p>{data.name} {data.surname}</p></Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                {data.title}
               </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-              <ListGroupItem>Cras justo odio</ListGroupItem>
-              <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-              <ListGroupItem>Vestibulum at eros</ListGroupItem>
+              <ListGroupItem>Who viewed your profile </ListGroupItem>
+              <ListGroupItem>Views of your post</ListGroupItem>
+              <ListGroupItem>Access exclusive tools & insights</ListGroupItem>
+              <ListGroupItem className="font-weight-bold" style = {{color: "black"}}><FcBookmark />Try Premium for free</ListGroupItem>
             </ListGroup>
             <Card.Body>
               <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
           </Card>
           {/* <h1>SIDEBAR PENDING...</h1> */}
