@@ -20,6 +20,7 @@ import Article from "./components/Article";
 
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import FeedLeftSide from "./components/FeedLeftSide";
 
 const ProfileView = () => (
   <Container>
@@ -43,15 +44,22 @@ function App() {
   return (
     <>
       <Router>
+
         <TopNavbar />
 
         <Route path="/user/:id" component={ProfileView} />
+       
+
+
+      
+      
+            
 
         <Container>
           <Row>
           <Col  xs={3}>
            
-
+                <FeedLeftSide />
             </Col>
           
           <Col className='justify-content-center align-items-center d-flex' xs={6}>
@@ -72,6 +80,7 @@ function App() {
             </Col>
           </Row>
         </Container>
+
 
         <BottomFooter />
       </Router>
