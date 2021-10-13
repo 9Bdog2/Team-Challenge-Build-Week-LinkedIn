@@ -24,6 +24,7 @@ const ProfileView = () => (
         <Profilejumbotron />
         <Activity />
         <ExperienceLI />
+        <Interests/>
         <Skills />
         <Interests />
       </Col>
