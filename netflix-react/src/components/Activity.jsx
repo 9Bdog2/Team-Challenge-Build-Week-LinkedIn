@@ -1,4 +1,13 @@
-import { Card, Button, Dropdown, Form } from "react-bootstrap";
+import {
+  Card,
+  Button,
+  Dropdown,
+  InputGroup,
+  FormControl,
+  OverlayTrigger,
+  Tooltip,
+  Badge,
+} from "react-bootstrap";
 import PopUpBox from "./PopUpBox";
 import { useState } from "react";
 
@@ -27,7 +36,7 @@ function Activity() {
                 color: "black",
                 backgroundColor: "black",
                 padding: 0,
-                marginBottom: 5,
+                marginBottom: 7,
                 margin: 0,
                 height: 0.2,
               }}
@@ -49,7 +58,15 @@ function Activity() {
                 <i class="fas fa-globe-asia">Anyone </i>
               </Dropdown.Toggle>
             </div>
-            <Form.Group
+            <InputGroup className="mb-3 mt-3 ">
+              <FormControl
+                className="inputgroup"
+                placeholder="Username"
+                aria-label="Default"
+                aria-describedby="inputGroup-sizing-default"
+              />
+            </InputGroup>
+            {/* <Form.Group
               controlId="exampleForm.ControlTextarea1"
               className="pt-2"
             >
@@ -58,17 +75,100 @@ function Activity() {
                 rows={3}
                 placeholder="What do you want to talk about?"
               />
-            </Form.Group>
+            </Form.Group> */}
             <Button variant="outline-primary">Add Hashtag</Button>
+            <footer>
+              <OverlayTrigger
+                overlay={<Tooltip id="tooltip-disabled">Add a photo</Tooltip>}
+              >
+                <span className="d-inline-block">
+                  <i
+                    class="fas fa-image photo m-2 mr-3 "
+                    style={{ pointerEvents: "none" }}
+                  ></i>
+                </span>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={<Tooltip id="tooltip-disabled">Add a video</Tooltip>}
+              >
+                <span className="d-inline-block">
+                  <i
+                    class="fas fa-video photo m-2 mr-3"
+                    style={{ pointerEvents: "none" }}
+                  ></i>
+                </span>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip id="tooltip-disabled">Add a document</Tooltip>
+                }
+              >
+                <span className="d-inline-block">
+                  <i
+                    class="fas fa-file photo m-2 mr-3"
+                    style={{ pointerEvents: "none" }}
+                  ></i>
+                </span>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip id="tooltip-disabled">
+                    Share that you're hiring
+                  </Tooltip>
+                }
+              >
+                <span className="d-inline-block">
+                  <i
+                    class="fas fa-briefcase photo m-2 mr-3"
+                    style={{ pointerEvents: "none" }}
+                  ></i>
+                </span>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip id="tooltip-disabled">Celebrate an occasion</Tooltip>
+                }
+              >
+                <span className="d-inline-block">
+                  <i
+                    class="fas fa-certificate photo m-2 mr-3"
+                    style={{ pointerEvents: "none" }}
+                  ></i>
+                </span>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={<Tooltip id="tooltip-disabled">Create a poll</Tooltip>}
+              >
+                <span className="d-inline-block">
+                  <i
+                    class="fas fa-poll photo m-2 mr-3"
+                    style={{ pointerEvents: "none" }}
+                  ></i>
+                </span>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={<Tooltip id="tooltip-disabled">Add the post</Tooltip>}
+              >
+                <span className="d-inline-block">
+                  <i
+                    class="fas fa-ellipsis-h sm m-2 mr-3"
+                    style={{ pointerEvents: "none" }}
+                  ></i>
+                </span>
+              </OverlayTrigger>
+              <Badge pill variant="primary" className="ml-5 mb-3">
+                Post
+              </Badge>
+            </footer>
           </PopUpBox>
         </Card.Body>
-
+        <h6 className="ml-2 pl-1 pr-1" style={{ color: "blue" }}>
+          {" "}
+          300 followers
+        </h6>
         <p className="ml-2 pl-1 pr-1">
-          I'm a first year Computer Science student who is knowledgeable in core
-          Python and furthermore inquisitive about different backend
-          technologies and software development methodologies. I'm actively
-          looking for an entry level position as a junior python developer. Feel
-          free to reach out to me -...
+          Postsyou created, shared, or commented on in the last 90days are
+          displayed here.
         </p>
 
         <Dropdown.Item eventKey="4" className=" text-center">

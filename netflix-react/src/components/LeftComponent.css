@@ -1,0 +1,94 @@
+.leftcomponent {
+  position: absolute;
+  padding: 10px;
+  left: 60%;
+  top: 2%;
+  width: 25%;
+  border-radius: 10px;
+  background-color: hsl(267, 31%, 94%);
+}
+.addfeed {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  top: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.follow {
+  width: 100px;
+  padding: 3px;
+  border-radius: 30px;
+}
+
+.todaystopcourses {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  top: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.footerimg {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  top: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.footer {
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  top: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.about:hover {
+  cursor: pointer;
+  color: blue;
+  text-decoration: blue;
+}
+
+.accessibility:hover {
+  cursor: pointer;
+  color: blue;
+  text-decoration: blue;
+}
+
+.helpcenter:hover {
+  cursor: pointer;
+  color: blue;
+}
+.privacy:hover {
+  cursor: pointer;
+  color: blue;
+}
+.choices:hover {
+  cursor: pointer;
+  color: blue;
+}
+.advertising:hover {
+  cursor: pointer;
+  color: blue;
+}
+.business:hover {
+  cursor: pointer;
+  color: blue;
+}
+.add:hover {
+  cursor: pointer;
+  color: blue;
+}
+.more:hover {
+  cursor: pointer;
+  color: blue;
+}
