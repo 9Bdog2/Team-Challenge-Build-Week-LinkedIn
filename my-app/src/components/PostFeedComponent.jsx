@@ -11,11 +11,12 @@ class PostFeedComponent extends React.Component {
   render() {
     return (
       <div className="mainBox PostFeedComponent">
-        <Row>
-          <Col xs={2}>
-            <img src="" className="img" alt="" />
+        <Row className='align-items-baseline'>
+          <Col xs={0} md={2}>
+            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQGn86FG0dYz1g/profile-displayphoto-shrink_100_100/0/1553778295833?e=1639612800&v=beta&t=jkB-q-l2MUUgXC0skIZv4xQNNtOdnIzcv4Yu6H5IuaQ" 
+            className="img" alt="" />
           </Col>
-          <Col xs={10}>
+          <Col xs={10} className='ml-0 pl-0'>
             <Button
               onClick={() => {
                 this.setState({
@@ -88,12 +89,14 @@ class PostModal extends React.Component {
             Create Post
           </Modal.Title>
         </Modal.Header>
+    
         <Modal.Body>
           {/* name and picture */}
 
           <Form>
             <Form.Group controlId="exampleForm.ControlTextarea1">
               <Form.Control
+               className='form'
                 placeholder="What do you want to talk about?"
                 as="textarea"
                 rows={3}
@@ -107,7 +110,7 @@ class PostModal extends React.Component {
               />
             </Form.Group>
           </Form>
-          <Button onClick={()=>{
+          <Button className='pButton' onClick={()=>{
 
               this.postData(this.state.text)
               

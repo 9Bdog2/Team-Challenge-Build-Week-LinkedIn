@@ -29,14 +29,14 @@ img {
 
     border-radius: 35px !important;
     color: black;
-    background-color: lightgrey;
+    background-color: white;
     border: 1px solid grey;
     width: 100%;
 
 
 }
 .postButton:hover{
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(221, 221, 221);
     color: black;
     border: 1px solid grey;
     width: 100%;
@@ -49,3 +49,36 @@ img {
     width: 100%;
     box-shadow: none;
 }
+.form{
+    border: none;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.pButton{
+    background-color: #0e76a8;
+    color: white;
+    border-radius: 50px;
+    border: 1px solid #167ead !important;
+   
+    font-weight: 600;
+    margin-left: 50px;
+    margin-top: 0px;
+    display: flex;
+    margin-left: auto !important;
+    font-size: small;
+  }
+
+
+  .pButton:hover{
+    background-color: #0e76a8;
+    color: white;
+    border-radius: 50px;
+    border: 1px solid #167ead !important;
+    
+    font-weight: 600;
+    margin-left: 50px;
+    margin-top: 0px;
+   
+    font-size: small;
+  }
