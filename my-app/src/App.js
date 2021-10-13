@@ -14,7 +14,6 @@ import ExperienceLI from "./components/ExperienceLI";
 import Skills from "./components/Skills";
 import Activity from "./components/Activity";
 import Interests from "./components/Interests";
-import Article from "./components/Article";
 
 import PostFeedComponent from "./components/PostFeedComponent";
 
@@ -46,6 +45,7 @@ function App() {
 
         <Route path="/user/:id" component={ProfileView} />
 
+<<<<<<< HEAD
 
         <Container>
           <Row>
@@ -68,6 +68,8 @@ function App() {
           </Row>
         </Container>
 
+=======
+>>>>>>> parent of fadd86f (Created card)
         <BottomFooter />
       </Router>
     </>
