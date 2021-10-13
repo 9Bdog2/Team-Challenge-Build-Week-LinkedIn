@@ -7,7 +7,7 @@
 
   padding: 20px;
 
-  background-color: rgb(174, 217, 228);
+  background-color: rgb(208, 227, 231);
   z-index: 30;
 
   /* display: flex; */
@@ -20,7 +20,6 @@
   padding: 20px;
   width: 100%;
   max-width: 640px;
-  background-color: rgb(240, 229, 229);
 }
 
 .popup-inner .close-btn {
@@ -29,7 +28,7 @@
   right: 15px;
 }
 .cross-btn:hover {
-  background-color: rgb(215, 214, 218);
+  background-color: rgb(237, 236, 245);
   border-radius: 50%;
   padding: 5px;
 }
