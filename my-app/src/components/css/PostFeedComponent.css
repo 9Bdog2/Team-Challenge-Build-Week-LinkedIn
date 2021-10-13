@@ -1,0 +1,37 @@
+.PostFeedComponent{
+    margin-top: 150px;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.mainBox{
+    margin-top: 100px;
+   
+    padding: 24px 16px 12px;
+    color: grey;
+    border-width: 0px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 15px;
+    box-shadow: 0px 0px 2px grey;
+    background-color: white;
+    
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.postButton{
+
+    border-radius: 35px !important;
+    color: black;
+    background-color: lightgrey;
+    border: 1px solid grey;
+    width: 100%;
+
+
+}
