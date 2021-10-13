@@ -46,9 +46,9 @@ export default function FeedLeftSide() {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="">
       <Row>
-        <Col xs={6} md={4}>
+        <Col>
           <Card className="mainBox">
             <Card.Img variant="top" src="https://picsum.photos/200/300?grayscale" />
             <Card.Body className=" cardProfile 

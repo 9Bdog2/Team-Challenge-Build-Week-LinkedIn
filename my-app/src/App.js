@@ -62,19 +62,21 @@ function App() {
                 <FeedLeftSide />
             </Col>
           
-          <Col className='justify-content-center align-items-center d-flex' xs={6}>
+          <Col className='justify-content-center d-flex' xs={6}>
            <Row>
+
+
             < Col xs={12}>
-           <PostFeedComponent />
-           </Col>
+           <PostFeedComponent className='marginB'/>
+
            <Article />
+           </Col>
+           
            </Row>
           
 
 
-            </Col>
-
-            <Col  xs={3}>
+            
            
 
             </Col>
