@@ -16,6 +16,7 @@ import Activity from "./components/Activity";
 import Interests from "./components/Interests";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import FeedLeftSide from "./components/FeedLeftSide";
 
 const ProfileView = () => (
   <Container>
@@ -39,9 +40,14 @@ function App() {
   return (
     <>
       <Router>
-        <TopNavbar />
-        <Route path="/user/:id" component={ProfileView} />
+        {/* <TopNavbar /> */}
 
+        <Route path="/user/:id" component={ProfileView} />
+       
+
+        <FeedLeftSide />
+      
+            
         <BottomFooter />
       </Router>
     </>
