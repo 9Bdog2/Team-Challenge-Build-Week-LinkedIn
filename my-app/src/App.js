@@ -15,7 +15,7 @@ import Skills from "./components/Skills";
 import Activity from "./components/Activity";
 import Interests from "./components/Interests";
 import PostFeedComponent from "./components/PostFeedComponent";
-
+import LeftComponent from "./components/LeftComponent";
 import Article from "./components/Article";
 
 
@@ -73,13 +73,20 @@ function App() {
            </Col>
            
            </Row>
-          
+              
 
-
+            
             
            
 
             </Col>
+
+
+            <Col  xs={3}>
+            <LeftComponent/>
+       </Col>
+
+
           </Row>
         </Container>
 
