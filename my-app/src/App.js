@@ -14,6 +14,8 @@ import ExperienceLI from "./components/ExperienceLI";
 import Skills from "./components/Skills";
 import Activity from "./components/Activity";
 import Interests from "./components/Interests";
+import Article from "./components/Article";
+
 import PostFeedComponent from "./components/PostFeedComponent";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -50,6 +52,7 @@ function App() {
 
         <Route path="/user/:id" component={ProfileView} />
 
+
         <Container>
           <Row>
           <Col  xs={3}>
@@ -59,6 +62,8 @@ function App() {
           
           <Col className='justify-content-center align-items-center d-flex' xs={6}>
             <PostFeedComponent />
+             <Article />
+        
 
             </Col>
 
