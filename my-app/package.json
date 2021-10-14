@@ -15,7 +15,8 @@
     "react-images-upload": "^1.2.8",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "react-images-upload": "1.2.8"
   },
   "scripts": {
     "start": "react-scripts start",
