@@ -124,13 +124,6 @@ const ExperienceItem = (props) => {
               <Modal.Title>Edit Experience</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <EditExperienceForm 
-              id={id}
-               />
-
-
-          <div className="upload-container swing-in-top-fwd">
-          
             {imageUploadingLoader ? (
               <div className="w-100 py-5 d-flex flex-column align-items-center justify-content-center">
                 <p className="font-weight-bold mr-2 mb-3">Uploading...</p>
@@ -139,7 +132,7 @@ const ExperienceItem = (props) => {
             ) : (
               <>
                 <ImageUploader
-                  withIcon={true}
+                  withIcon={false}
                   buttonText="Upload image"
                   imgExtension={[".jpg", ".gif", ".png", ".gif"]}
                   maxFileSize={5242880}
@@ -154,7 +147,11 @@ const ExperienceItem = (props) => {
                 </div>
               </>
             )}
-          </div>
+              <EditExperienceForm 
+              id={id}
+               />
+
+
        
             </Modal.Body>
           </Modal>
