@@ -113,7 +113,7 @@ function Article() {
                 </button>
               </p>
               <img
-                src="https://images.unsplash.com/photo-1634055614116-3a96869e21ed?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                src={data[i].image}
                 alt="placeholder"
                 style={{
                   borderRadius: "0%",
