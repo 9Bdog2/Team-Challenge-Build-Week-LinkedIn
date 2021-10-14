@@ -88,7 +88,7 @@ const ExperienceItem = (props) => {
     className=" listElement d-flex align-items-center justify-content-between brdr-bottom">
       <div className="d-flex align-items-start">
         <div className="expImgPlace mr-4" >
-          <img src={experienceImage}/>
+          <img className="img" src={experienceImage}/>
          
         </div>
         

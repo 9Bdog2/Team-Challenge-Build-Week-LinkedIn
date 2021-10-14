@@ -55,7 +55,7 @@ const Skills = () => {
             {
               data.slice(0, 8).map((element) => (
 
-                <ListGroup.Item key={element._id}><img src={element.image} alt="user profile"></img></ListGroup.Item>
+                <ListGroup.Item key={element._id}><img className="imgUser" src={element.image} alt="user profile"></img></ListGroup.Item>
               ))
             }
           </ListGroup>
