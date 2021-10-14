@@ -46,7 +46,7 @@ function Article() {
                 <div>
                   <p>
                     <b>Bogdan Birau</b>
-                    <small>likes this</small>
+                    <small className="ml-1">likes this</small>
                   </p>
                 </div>
               </Col>
@@ -69,9 +69,10 @@ function Article() {
               <Col md={9} style={{ fontSize: " 12px" }}>
                 <div>
                   <p>
-                    <b>{data[i].username}</b>
+                    <b>{data[i].user.name}{data[i].user.surname}</b>
                     &bull;
                     <small>2nd</small>
+                    {data[i].user.area}
                   </p>
                 </div>
                 <div>
