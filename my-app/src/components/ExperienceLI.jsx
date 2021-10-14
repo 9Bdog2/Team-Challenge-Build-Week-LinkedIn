@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./ExperienceLI.css";
 import EditExperienceForm from "./EditExperienceForm";
+import ExperienceItem from "./ExperienceItem";
 
 class ExperienceLI extends React.Component {
   state = {
@@ -75,29 +76,38 @@ class ExperienceLI extends React.Component {
             {this.state.fetchedExperience.length > 0 &&
               this.state.fetchedExperience.map((e) => {
                 return (
-                  <ListGroup.Item className="listElement" key={e._id}>
-                    <Link
-                      to={"/?id=" + e._id}
-                      onClick={() => {
-                        this.setState({
-                          ...this.state,
-                          showEditExperience: true,
-                          selectedExperience: this.getParams(),
-                        });
-                        console.log("thisone", this.state.selectedExperience);
-                      }}
-                    >
-                      <a className={"positionJob"}>
-                        <h6 className="positionJob">{e.role}</h6>
-                        <p>{e.company} </p>
-                        <p>{e.startDate + " -  " + e.endDate}</p>
-                        <p>{e.area} </p>
-                      </a>
-                    </Link>
-                  </ListGroup.Item>
+                  // <ListGroup.Item className="listElement" key={e._id}>
+                  //   <Link
+                  //     to={"/?id=" + e._id}
+                  //     onClick={() => {
+                  //       this.setState({
+                  //         ...this.state,
+                  //         showEditExperience: false,
+                  //         selectedExperience: this.getParams(),
+                  //       });
+                  //       console.log("thisone", this.state.selectedExperience);
+                  //     }}
+                  //   >
+                  //     <a className={"positionJob"}>
+                    
+                  //       <h6 className="positionJob">{e.role}</h6>
+                  //       <p>{e.company} </p>
+                  //       <p>{e.startDate + " -  " + e.endDate}</p>
+                  //       <p>{e.area} </p>
+                  //     </a>
+                  //   </Link>
+                  //   </ListGroup.Item>
+                    <ExperienceItem
+                    
+                    experience={e}
+                    editModal={true}
+                    userID={e._id}
+                  />
+                  
                 );
               })}
           </ListGroup>
+         
         </Router>
 
         <>
