@@ -39,9 +39,9 @@ function Article() {
   return (
     <>
       {data.slice(0, 8).map((element, i) => (
-        <Container className="">
+        <Container className="mainBox mt-1">
           <Card>
-            <Card.Body className=" ">
+            <Card.Body className="titleMain ">
               <Row>
                 <Col md={10}>
                   <div>
@@ -58,7 +58,7 @@ function Article() {
                 </Col>
               </Row>
             </Card.Body>
-            <Card.Body style={{ fontSize: "20px" }}>
+            <Card.Body className="titleMain" style={{ fontSize: "20px" }}>
               <Row>
                 <Col md={1}>
                   <div>
