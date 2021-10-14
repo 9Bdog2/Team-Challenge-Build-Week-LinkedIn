@@ -1,8 +1,9 @@
 import React from "react";
-import { ListGroup, Button, Spinner } from "react-bootstrap";
-import ImageUploader from "react-images-upload";
+import { ListGroup } from "react-bootstrap";
+
 import { Modal } from "react-bootstrap";
 import EditExperienceForm from "./EditExperienceForm";
+import ImageUploader from "react-images-upload";
 
 
 const ExperienceItem = (props) => {
@@ -124,13 +125,8 @@ const ExperienceItem = (props) => {
               <Modal.Title>Edit Experience</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            {imageUploadingLoader ? (
-              <div className="w-100 py-5 d-flex flex-column align-items-center justify-content-center">
-                <p className="font-weight-bold mr-2 mb-3">Uploading...</p>
-                <Spinner variant="primary" animation="border" role="status" />
-              </div>
-            ) : (
-              <>
+           
+             
                 <ImageUploader
                   withIcon={false}
                   buttonText="Upload image"
@@ -139,14 +135,14 @@ const ExperienceItem = (props) => {
                   singleImage={true}
                   withPreview={true}
                   withLabel={false}
-                  onChange={profilePictureUploadHandler}
+                 
                 />
                 <div className="d-flex justify-content-center align-items-center" style={{ height: 40 }}>
                  
             
                 </div>
-              </>
-            )}
+            
+           
               <EditExperienceForm 
               id={id}
                />

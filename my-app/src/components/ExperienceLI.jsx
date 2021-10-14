@@ -6,8 +6,8 @@ import ExperienceForm from "./ExperienceForm";
 import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./ExperienceLI.css";
-import EditExperienceForm from "./EditExperienceForm";
 import ExperienceItem from "./ExperienceItem";
+import ImageUploader from "react-images-upload";
 
 class ExperienceLI extends React.Component {
   state = {
@@ -72,19 +72,22 @@ class ExperienceLI extends React.Component {
             {this.state.fetchedExperience.length > 0 &&
               this.state.fetchedExperience.map((e,) => {
                 return (
-             
+                  <>
                   <Link
                       to={"/user/" +'6163e31ca890cc0015cf07c9'+ "/?id=" + e._id}
                       
                     
                     >
-                    <ExperienceItem
                     
-                    experience={e}
-                    editModal={true}
-                    userID={e._id}
-                  />
                   </Link>
+
+                  <ExperienceItem
+                                      
+                  experience={e}
+                  editModal={true}
+                  userID={e._id}
+                  />
+                  </>
                 );
               })}
           </ListGroup>
@@ -106,9 +109,22 @@ class ExperienceLI extends React.Component {
           >
             <Modal.Header closeButton>
               <Modal.Title>Add Experience</Modal.Title>
+             
+              
             </Modal.Header>
             <Modal.Body>
+            <ImageUploader
+                  withIcon={false}
+                  buttonText="Upload image"
+                  imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                  maxFileSize={5242880}
+                  singleImage={true}
+                  withPreview={true}
+                  withLabel={false}
+                 
+                />
               <ExperienceForm />
+              
             </Modal.Body>
           </Modal>
         </>

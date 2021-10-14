@@ -78,6 +78,7 @@ class PostModal extends React.Component {
               />
             </Form.Group>
           </Form>
+          
           <Button className='pButton' onClick={()=>{
 
               this.postData(this.state.text)
