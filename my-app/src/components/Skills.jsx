@@ -31,12 +31,12 @@ const Skills = () => {
 
   return (
     <>
-      <Card>
-        <Card className="Skills p-2">
+     
+        <Card className=" Skills mainBox mt-4  p-2">
           <Card.Body>
             <Row>
               <Col md={8}>
-                <h4>Skills & endorsements</h4>
+                <h4 className="titleMain">Skills & endorsements</h4>
               </Col>
               <Col md={4}>
                 <a href="">Add new skill</a>
@@ -63,7 +63,7 @@ const Skills = () => {
             Show More
           </Button>{" "}
         </Card>
-      </Card>
+     
     </>
   );
 };
