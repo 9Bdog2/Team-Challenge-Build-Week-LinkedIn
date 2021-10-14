@@ -35,9 +35,9 @@ const members = [
 function Interests() {
   return (
     <>
-      <Card>
-        <Card className="Skills p-2">
-          <Card.Body className=" " style={{ fontSize: "20px" }}>
+     
+        <Card className=" mt-4 mainBox Skills p-2">
+          <Card.Body className=" titleMain" style={{ fontSize: "20px" }}>
             Interests
             <i class="fas fa-pen plus-icon p-2 ml-2 "></i>
           </Card.Body>
@@ -70,7 +70,7 @@ function Interests() {
             <p className="bottom_p"> See all </p>
           </div>
         </Card>
-      </Card>
+      
     </>
   );
 }

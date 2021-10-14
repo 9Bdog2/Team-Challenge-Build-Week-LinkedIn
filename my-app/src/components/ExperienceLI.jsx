@@ -53,7 +53,7 @@ class ExperienceLI extends React.Component {
   };
   render() {
     return (
-      <div className="mainBox">
+      <div className="mainBox mt-4">
         <div className="d-flex justify-content-between align-items-end ">
           <h5 className="titleExperience">{this.props.title} Experiences</h5>
           <Icon.Plus
