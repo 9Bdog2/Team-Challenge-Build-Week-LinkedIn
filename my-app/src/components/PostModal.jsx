@@ -38,7 +38,6 @@ class PostModal extends React.Component {
       );
       if (response.ok) {
         console.log("posted");
-        this.fetchExperienceImage();
       } else {
         console.log(response);
       }
@@ -46,10 +45,6 @@ class PostModal extends React.Component {
       console.log(e);
     }
   };
-
-  componentDidMount = async () =>{
-    /* this.fetchExperienceImage(); */
-  }
 
   componentDidUpdate = (prevProps) => {};
 
@@ -136,5 +131,3 @@ class PostModal extends React.Component {
 }
 
 export default PostModal;
-
-
