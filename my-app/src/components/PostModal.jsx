@@ -101,7 +101,7 @@ class PostModal extends React.Component {
                   });
                 }}
               />
-              <Form.Control />
+              
               <ImageUploader
                 withIcon={true}
                 buttonText="Upload image"
