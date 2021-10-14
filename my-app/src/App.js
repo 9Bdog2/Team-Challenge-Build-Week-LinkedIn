@@ -21,12 +21,14 @@ import Article from "./components/Article";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import FeedLeftSide from "./components/FeedLeftSide";
+import EditProfilePicture from "./components/EditProfilePicture";
 
 const ProfileView = () => (
   <Container>
     <Row>
       <Col md={8}>
         <Profilejumbotron />
+        <EditProfilePicture/>
         <Activity />
         <ExperienceLI />
         <Interests />

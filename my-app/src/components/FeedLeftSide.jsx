@@ -70,8 +70,6 @@ export default function FeedLeftSide() {
               <Card.Link href="#">Card Link</Card.Link>
             </Card.Body>
           </Card>
-          {/* <h1>SIDEBAR PENDING...</h1> */}
-          {/* <img src="https://picsum.photos/300/300" alt="placeholder banner" /> */}
         </Col>
       </Row>
     </Container>
