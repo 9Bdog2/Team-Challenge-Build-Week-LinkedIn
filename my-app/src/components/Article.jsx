@@ -24,6 +24,7 @@ function Article() {
       );
       if (response.ok) {
         let data = await response.json();
+        data.reverse()
         console.log(data, 'here');
         setData(data);
       } else {
@@ -37,7 +38,7 @@ function Article() {
   return (
     <>
 
-      {data.slice(0, 8).map((element, i) => (
+      {data.slice(0,10).map((element, i) => (
         <Container className="mainBox mt-1">
           <Card>
             <Card.Body className="titleMain ">

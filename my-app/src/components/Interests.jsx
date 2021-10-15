@@ -37,7 +37,7 @@ function Interests() {
     <>
      
         <Card className=" mt-4 mainBox Skills p-2">
-          <Card.Body className=" titleMain" style={{ fontSize: "20px" }}>
+          <Card.Body className=" titleExperience" style={{ fontSize: "20px" }}>
             Interests
             <i class="fas fa-pen plus-icon p-2 ml-2 "></i>
           </Card.Body>

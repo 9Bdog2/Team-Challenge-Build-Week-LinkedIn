@@ -1,9 +1,12 @@
 import React from "react";
 import Form from 'react-bootstrap/Form'
 import { Button } from "react-bootstrap";
+import ImageUploader from "react-images-upload";
+
 
 class ExperienceForm extends React.Component {
   state = {
+    image: null,
         addExperience: {
             role: "",
             company: "",
@@ -12,6 +15,7 @@ class ExperienceForm extends React.Component {
             description: "",
             area: ''
         }
+        
   }
 
   handleInput = (key, value) =>{
@@ -42,7 +46,10 @@ class ExperienceForm extends React.Component {
         }
       );
       if (response.ok) {
-        console.log('posted')
+        const experience = await response.json()
+        this.postData(query, experience._id )
+        
+        console.log(response)
       } else {
         console.log(response);
       }
@@ -50,6 +57,33 @@ class ExperienceForm extends React.Component {
       console.log(e);
     }
   }
+  
+
+  postData = async (query, expId) => {
+    let formData = new FormData();
+    formData.append("experience", this.state.image); // "post" is the name of the file you send to post an image. (Specified on eduflow!)
+
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/`+query+`/experiences/`+expId+`/picture`,
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Authorization':
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
+           },
+        });
+        
+          
+          console.log('sent request')
+        
+      } catch (er) {
+        console.log(er);
+      }
+    };//
+
+
 
   render() {
     return (
@@ -102,7 +136,17 @@ class ExperienceForm extends React.Component {
                     this.handleInput("area", e.target.value);
                   }} type="text" placeholder="SA, California" />
           </Form.Group>
-          
+          <ImageUploader
+                  withIcon={false}
+                  buttonText="Upload image"
+                  imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                  maxFileSize={5242880}
+                  singleImage={true}
+                  withPreview={true}
+                  withLabel={false}
+                  onChange={(files) => this.setState({ image: files[0] })}
+                 
+                />
 
           
           <Button variant="primary"  onClick={()=>{

@@ -4,10 +4,10 @@ const Activity = () => {
   return (
     <>
       <Card
-        className="mainBox mt-0 Activity p-2
+        className="mainBox mt-0  Activity p-2
       "
       >
-        <Card.Body className="titleMain " style={{ fontSize: "20px" }}>
+        <Card.Body className="titleExperience ml-0 pl-2 " style={{ fontSize: "20px" }}>
           Activity
         
         </Card.Body>

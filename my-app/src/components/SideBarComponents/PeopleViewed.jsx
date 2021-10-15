@@ -61,7 +61,7 @@ class PeopleViewed extends React.Component {
             this.state.fetchedUsers.map((e) => {
               return (
                 <ListGroup.Item className="listElement" key={e._id}>
-                  <Link className={"d-flex"} to={`/user/${e._id}`}>
+                  <Link path='/user/:id' className={"d-flex"} to={`/user/${e._id}`}>
                     <img className={'imgUser'} src={e.image} />
 
                     <p className="name">
