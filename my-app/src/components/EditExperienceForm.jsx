@@ -1,6 +1,8 @@
 import React from "react";
 import Form from 'react-bootstrap/Form'
 import { Button } from "react-bootstrap";
+import ImageUploader from "react-images-upload";
+
 
 class EditExperienceForm extends React.Component {
 
@@ -33,7 +35,6 @@ class EditExperienceForm extends React.Component {
             )
             if(response.ok){
                 let data = await response.json()
-            
                 
                 this.setState({
                     ...this.state,
@@ -53,6 +54,31 @@ class EditExperienceForm extends React.Component {
 
     }
 
+    postData = async (query, expId) => {
+      let formData = new FormData();
+      formData.append("experience", this.state.image); // "post" is the name of the file you send to post an image. (Specified on eduflow!)
+  
+      try {
+        let response = await fetch(
+          `https://striveschool-api.herokuapp.com/api/profile/`+query+`/experiences/`+expId+`/picture`,
+          {
+            method: "POST",
+            body: formData,
+            headers: {
+              'Authorization':
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ",
+             },
+          });
+          
+            
+            console.log('sent request')
+          
+        } catch (er) {
+          console.log(er);
+        }
+      };//
+  
+
     editExperience = async (exp,queryExperienceId, queryUserId ='6163e31ca890cc0015cf07c9' ) => {
       
         try {
@@ -69,7 +95,9 @@ class EditExperienceForm extends React.Component {
             }
           );
           if (response.ok) {
-            console.log(this.props.id)
+            console.log('edited')
+            this.postData(queryUserId, queryExperienceId )
+            
           } else {
             console.log(response);
           }
@@ -225,18 +253,30 @@ componentDidMount = () =>{
             />
           </Form.Group>
 
-          <Button
-            variant="primary"
-            onClick={() => {
-              this.editExperience(this.state.addExperience,  this.props.id);
-            }}
-          >
+          <ImageUploader
+                  withIcon={false}
+                  buttonText="Upload image"
+                  imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                  maxFileSize={5242880}
+                  singleImage={true}
+                  withPreview={true}
+                  withLabel={false}
+                  onChange={(files) => this.setState({ image: files[0] })}
+                 
+                />
+
+          
+          <Button variant="primary"  onClick={()=>{
+                this.editExperience(this.state.addExperience,  this.props.id)
+                this.props.setShow(false)
+          }}>
             Save
           </Button>
           <Button
             variant="danger"
             onClick={() => {
               this.deleteExperience(this.props.id);
+              this.props.setShow(false)
             }}
           >
             Delete

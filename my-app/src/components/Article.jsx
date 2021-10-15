@@ -24,7 +24,10 @@ function Article() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data, "here");
+
+        data.reverse()
+        console.log(data, 'here');
+
         setData(data);
       } else {
         console.log("Something went wrong with the Posts request");
@@ -37,6 +40,7 @@ function Article() {
   return (
     <>
       {data.slice(0, 8).map((element, i) => (
+
         <Container className="mainBox mt-1">
           <Card>
             <Card.Body className="titleMain ">
