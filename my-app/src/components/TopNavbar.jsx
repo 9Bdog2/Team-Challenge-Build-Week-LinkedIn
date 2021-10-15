@@ -24,8 +24,8 @@ function TopNavbar() {
           <Icon.Search className="mr-2" />
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
         </Form>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className='iconsNavbar' >
+         <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
+         <Navbar.Collapse id="basic-navbar-nav" className='iconsNavbar' > 
           <Nav className="ml-auto iconsNavbar" >
             <div>
               <div className="top_icons_container">
