@@ -80,6 +80,11 @@ const ExperienceItem = (props) => {
     setImageUpload(picture);
   };
 
+  const converDates = (query)=>{
+    let date = new Date(query)
+    return date.getUTCFullYear()
+  }
+
   React.useEffect(() => {
     fetchExperienceImage(); //taken
   }, []);
@@ -100,10 +105,15 @@ const ExperienceItem = (props) => {
       
       
     }} className={"positionJob"}>
+
+
+      {
+        
+      }
                     
                     <h6 className="positionJob">{props.experience.role}</h6>
                     <p>{props.experience.company} </p>
-                    <p>{props.experience.startDate + " -  " + props.experience.endDate}</p>
+                    <p>{converDates(props.experience.startDate) + " -  " + converDates(props.experience.endDate)}</p>
                     <p>{props.experience.area} </p>
                   </a>
 
