@@ -9,6 +9,9 @@ p {
     display: contents;
 }
 
-
+@media screen and (max-width: 973px) {
+  
+  
+}
 
 /* -------------------------------- */

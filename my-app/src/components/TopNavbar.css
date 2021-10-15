@@ -1,34 +1,34 @@
 /* TopNavbar
 -------------------------------- */
+
+#basic-navbar-nav{
+  background: white;
+}
+
 .top_icons_container {
   text-align: center;
 }
 
-.top_icons {
-  width: 25px;
-  height: 25px;
-}
-
-.top_link_container {
-  padding: 0;
-}
-
-.border-md-left {
-  border-left: 1px solid silver;
-}
-#basic-nav-dropdown {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-#basic-navbar-nav{
-    background: darkgrey;
-}
-
 @media screen and (min-width: 990px) {
-  #basic-navbar-nav{
-    background: white;
+  
+  .top_icons {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .top_link_container {
+    padding: 0;
+  }
+  
+  .border-md-left {
+    border-left: 1px solid silver;
+  }
+  #basic-nav-dropdown {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 }
+  
 /* -------------------------------- */
 
 .iconsNavbar {
