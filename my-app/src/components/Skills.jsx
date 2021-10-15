@@ -34,34 +34,37 @@ const Skills = () => {
      
         <Card className=" Skills mainBox mt-4  p-2">
           <Card.Body>
-            <Row>
+            <Row className="d-flex"> 
               <Col md={8}>
                 <h4 className="titleMain">Skills & endorsements</h4>
               </Col>
               <Col md={4}>
-                <a href="">Add new skill</a>
+               
 
                 <Button className="msgButton ml-2"><BsPencil /></Button>
               </Col>
             </Row>
-            <div>
-            <Button className="msgButton" variant="outline-primary">Take Skill Quiz</Button>
-            </div>
+           
             <p>
             <span className="font-weight-bold">Teamwork</span> <span className="fw-light">10</span>
             </p>
           </Card.Body>
           <ListGroup variant="flush">
             {
-              data.slice(0, 8).map((element) => (
+              data.slice(0, 4).map((element) => (
 
                 <ListGroup.Item key={element._id}><img className="imgUser" src={element.image} alt="user profile"></img></ListGroup.Item>
               ))
             }
           </ListGroup>
-          <Button variant="light" size="sm" className="QuizButton fw-bold">
-            Show More
-          </Button>{" "}
+          <div className="bgButton">
+            <a
+              className="showMore"
+             
+            >
+              {"Show More"}{" "}
+            </a>
+          </div>
         </Card>
      
     </>

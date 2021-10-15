@@ -4,8 +4,6 @@ import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import ImageUploader from "react-images-upload";
 
-// import "./Article.css";
-
 function Article() {
   const [data, setData] = useState([]);
 
@@ -26,7 +24,7 @@ function Article() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
+        console.log(data, 'here');
         setData(data);
       } else {
         console.log("Something went wrong with the Posts request");
@@ -38,109 +36,108 @@ function Article() {
 
   return (
     <>
-      {data.map(
-        (element, i) =>
-          i < 30 && (
-            <Container className="">
-              <Card>
-                <Card.Body className=" ">
-                  <Row>
-                    <Col md={10}>
-                      <div>
-                        <p>
-                          <b>Bogdan Birau</b>
-                          <small className="ml-1">likes this</small>
-                        </p>
-                      </div>
-                    </Col>
-                    <Col md={2}>
-                      <button type="button" className="btn btn-light">
-                        <Icon.ThreeDots />
-                      </button>
-                    </Col>
-                  </Row>
-                </Card.Body>
-                <Card.Body style={{ fontSize: "20px" }}>
-                  <Row>
-                    <Col md={1}>
-                      <div>
-                        <span>
-                          <img
-                            src={data[i].user.image}
-                            width={25}
-                            height={25}
-                            alt="profile"
-                          />
-                        </span>
-                      </div>
-                    </Col>
-                    <Col md={9} style={{ fontSize: " 12px" }}>
-                      <div>
-                        <p>
-                          <b>
-                            {data[i].user.name}
-                            {data[i].user.surname}
-                          </b>
-                          &bull;
-                          <small>2nd</small>
-                          {data[i].user.area}
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          <p>
-                            <small>{data[i].user.title}</small>{" "}
-                          </p>
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          3h &bull; Edited &bull;
-                          <Icon.Globe />
-                        </p>
-                      </div>
-                    </Col>
-                    <Col md={2}>
-                      <button type="button" className="btn btn-light">
-                        + Follow
-                      </button>
-                    </Col>
-                  </Row>
-                </Card.Body>
-                <Card.Body>
-                  <p>
-                    {data[i].text}
-                    <button type="button" className="btn btn-light">
-                      <small>...see more</small>
-                    </button>
-                  </p>
-                  <img
-                    src={data[i].image}
-                    alt="image"
-                    style={{
-                      borderRadius: "0%",
-                      height: "fit-content",
-                      width: "fit-content",
-                    }}
-                  />
-                </Card.Body>
-                <Card.Body></Card.Body>
-                <Row>
-                  <Col md={12}>
-                    <div className="d-flex align-items-baseline">
-                      <button type="button" className="btn btn-light">
-                        <Icon.HandThumbsUp />
-                      </button>
-                      <button type="button" className="btn btn-light">
-                        <Icon.Lightbulb />
-                      </button>
-                      <button type="button" className="btn btn-light">
-                        <Icon.SuitHeart />
-                      </button>
-                      <p>23 &bull; 3 comments</p>
-                    </div>
-                  </Col>
-                </Row>
+
+      {data.slice(0, 8).map((element, i) => (
+        <Container className="mainBox mt-1">
+          <Card>
+            <Card.Body className="titleMain ">
+              <Row>
+                <Col md={10}>
+                  <div>
+                    <p>
+                      <b>Bogdan Birau</b>
+                      <small className="ml-1">likes this</small>
+                    </p>
+                  </div>
+                </Col>
+                <Col md={2}>
+                  <button type="button" className="btn btn-light">
+                    <Icon.ThreeDots />
+                  </button>
+                </Col>
+              </Row>
+            </Card.Body>
+            <Card.Body className="titleMain" style={{ fontSize: "20px" }}>
+              <Row>
+                <Col md={1}>
+                  <div>
+                    <span>
+                      <img
+                        src={data[i].user.image}
+                        width={25}
+                        height={25}
+                        alt="profile"
+                      />
+                    </span>
+                  </div>
+                </Col>
+                <Col md={9} style={{ fontSize: " 12px" }}>
+                  <div>
+                    <p>
+                      <b>
+                        {data[i].user.name}
+                        {data[i].user.surname}
+                      </b>
+                      &bull;
+                      <small>2nd</small>
+                      {data[i].user.area}
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      <p>
+                        <small>{data[i].user.title}</small>{" "}
+                      </p>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      3h &bull; Edited &bull;
+                      <Icon.Globe />
+                    </p>
+                  </div>
+                </Col>
+                <Col md={2}>
+                  <button type="button" className="btn btn-light">
+                    + Follow
+                  </button>
+                </Col>
+              </Row>
+            </Card.Body>
+            <Card.Body>
+              <p>
+                {data[i].text}
+                <button type="button" className="btn btn-light">
+                  <small>...see more</small>
+                </button>
+              </p>
+              <img
+                src={data[i].image}
+                
+                style={{
+                  borderRadius: "0%",
+                  height: "100px",
+                  width: "100%",
+                }}
+              />
+            </Card.Body>
+            <Card.Body></Card.Body>
+            <Row>
+              <Col md={12}>
+                <div className="d-flex align-items-baseline">
+                  <button type="button" className="btn btn-light">
+                    <Icon.HandThumbsUp />
+                  </button>
+                  <button type="button" className="btn btn-light">
+                    <Icon.Lightbulb />
+                  </button>
+                  <button type="button" className="btn btn-light">
+                    <Icon.SuitHeart />
+                  </button>
+                  <p>23 &bull; 3 comments</p>
+                </div>
+              </Col>
+            </Row>
 
 
                 <Row>

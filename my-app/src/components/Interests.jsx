@@ -66,9 +66,7 @@ function Interests() {
               </Row>
             </Container>
           </Card.Body>
-          <div className="p_container">
-            <p className="bottom_p"> See all </p>
-          </div>
+         
         </Card>
       
     </>
