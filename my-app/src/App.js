@@ -45,8 +45,8 @@ const FeedView = () => {
         <FeedLeftSide />
       </Col>
 
-      <Col className="justify-content-center d-flex" xs={6}>
-        <Row>
+      <Col className="justify-content-center" xs={6}>
+        <Row className="justify-content-center">
           <Col xs={10}>
             <PostFeedComponent className="marginB" />
 

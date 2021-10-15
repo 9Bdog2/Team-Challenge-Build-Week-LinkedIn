@@ -11,7 +11,7 @@ function TopNavbar() {
       <Navbar className='NavbarSizing' bg="light" expand="lg">
 
         <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/feed/6163e31ca890cc0015cf07c9/61654628a029f500157c5ace">
           <img
             src={linkedIn_logo_initials}
             className="logo"
@@ -31,7 +31,7 @@ function TopNavbar() {
               <div className="top_icons_container">
                 <Icon.HouseDoorFill className="top_icons" />
               </div>
-              <Nav.Link href="#home" className="top_link_container">Home</Nav.Link>
+              <Nav.Link href="/feed/6163e31ca890cc0015cf07c9/61654628a029f500157c5ace" className="top_link_container">Home</Nav.Link>
             </div>
             <div className="top_icons_container">
               <Icon.PeopleFill className="top_icons" />

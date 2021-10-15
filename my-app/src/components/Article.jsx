@@ -4,8 +4,6 @@ import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import ImageUploader from "react-images-upload";
 
-// import "./Article.css";
-
 function Article() {
   const [data, setData] = useState([]);
 
@@ -26,7 +24,7 @@ function Article() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
+        console.log(data, 'here');
         setData(data);
       } else {
         console.log("Something went wrong with the Posts request");
@@ -113,12 +111,12 @@ function Article() {
                 </button>
               </p>
               <img
-                src="https://images.unsplash.com/photo-1634055614116-3a96869e21ed?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                alt="placeholder"
+                src={data[i].image}
+                
                 style={{
                   borderRadius: "0%",
-                  height: "fit-content",
-                  width: "fit-content",
+                  height: "100px",
+                  width: "100%",
                 }}
               />
             </Card.Body>

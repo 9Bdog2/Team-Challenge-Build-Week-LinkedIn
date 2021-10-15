@@ -31,7 +31,7 @@ class PostModal extends React.Component {
         }
       );
       if (response.ok) {
-        console.log("posted");
+        console.log(response);
       } else {
         console.log(response);
       }
