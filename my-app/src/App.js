@@ -39,7 +39,7 @@ const ProfileView = () => (
 );
 
 const FeedView = () => {
-  <Container>
+ return <Container>
     <Row>
       <Col xs={3}>
         <FeedLeftSide />
@@ -70,29 +70,9 @@ function App() {
 
         <Route path="/user/:id" component={ProfileView} />
 
-        <Route path="/feed/:id" component={FeedView} />
+        <Route path="/feed/6163e31ca890cc0015cf07c9/61654628a029f500157c5ace" component={FeedView} />
 
-        <Container>
-          <Row>
-            <Col xs={3}>
-              <FeedLeftSide />
-            </Col>
-
-            <Col className="justify-content-center d-flex" xs={6}>
-              <Row>
-                <Col xs={12}>
-                  <PostFeedComponent className="marginB" />
-
-                  <Article />
-                </Col>
-              </Row>
-            </Col>
-
-            <Col xs={3}>
-              <LeftComponent />
-            </Col>
-          </Row>
-        </Container>
+      
 
         <BottomFooter />
       </Router>

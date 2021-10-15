@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroup } from "react-bootstrap";
 
-import { Modal } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import EditExperienceForm from "./EditExperienceForm";
 import ImageUploader from "react-images-upload";
 
@@ -11,7 +11,7 @@ const ExperienceItem = (props) => {
   const [experienceImage, setExperienceImage] = React.useState();
   const [imageUpload, setImageUpload] = React.useState();
   const [imageUploadingLoader, setImageUploadingLoader] = React.useState(false);
-  const [openModal, showModal] = React.useState(false)
+   const [openModal, showModal] = React.useState(false)
 
   const [id, getId] = React.useState('')
 
@@ -126,8 +126,8 @@ const ExperienceItem = (props) => {
             </Modal.Header>
             <Modal.Body>
            
-             
-                <ImageUploader
+            
+            <ImageUploader
                   withIcon={false}
                   buttonText="Upload image"
                   imgExtension={[".jpg", ".gif", ".png", ".gif"]}
@@ -135,8 +135,22 @@ const ExperienceItem = (props) => {
                   singleImage={true}
                   withPreview={true}
                   withLabel={false}
-                 
+                  onChange={profilePictureUploadHandler}
                 />
+                 
+                  
+                 <Button
+                    variant="primary"
+                    className="rounded-pill"
+                    style={{ width: "60%" }}
+                    onClick={postProfilePictureHandler}
+                  >
+                    Save Picture 
+                  </Button>
+           
+         
+                 
+            
                 <div className="d-flex justify-content-center align-items-center" style={{ height: 40 }}>
                  
             
@@ -145,7 +159,10 @@ const ExperienceItem = (props) => {
            
               <EditExperienceForm 
               id={id}
+
                />
+
+                 
 
 
        
