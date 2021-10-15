@@ -42,13 +42,13 @@ const ProfileView = () => (
 const FeedView = () => {
  return <Container>
     <Row>
-      <Col className="px-0  mx-0" xs={3}>
+      <Col className="px-0  mx-0" xs={3} md={3}>
         <FeedLeftSide />
       </Col>
 
-      <Col className="justify-content-center px-0  mx-0" xs={6}>
+      <Col className="justify-content-center px-0  mx-0" xs={9} md={6}>
         <Row className="">
-          <Col xs={12}>
+          <Col md={12}>
             <PostFeedComponent className="marginB" />
 
             <Article />
@@ -56,7 +56,7 @@ const FeedView = () => {
         </Row>
       </Col>
 
-      <Col className="px-3  mx-0" xs={3}>
+      <Col className="px-3  mx-0" md={3}>
         <LeftComponent />
       </Col>
     </Row>
