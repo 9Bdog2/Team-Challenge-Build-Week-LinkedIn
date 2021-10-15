@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./ExperienceLI.css";
 import ExperienceItem from "./ExperienceItem";
-import ImageUploader from "react-images-upload";
 
 class ExperienceLI extends React.Component {
   state = {
@@ -113,17 +112,7 @@ class ExperienceLI extends React.Component {
               
             </Modal.Header>
             <Modal.Body>
-            <ImageUploader
-                  withIcon={false}
-                  buttonText="Upload image"
-                  imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-                  maxFileSize={5242880}
-                  singleImage={true}
-                  withPreview={true}
-                  withLabel={false}
-                 
-                />
-              <ExperienceForm />
+            <ExperienceForm/>
               
             </Modal.Body>
           </Modal>

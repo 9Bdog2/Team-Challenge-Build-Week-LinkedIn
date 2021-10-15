@@ -127,26 +127,7 @@ const ExperienceItem = (props) => {
             <Modal.Body>
            
             
-            <ImageUploader
-                  withIcon={false}
-                  buttonText="Upload image"
-                  imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-                  maxFileSize={5242880}
-                  singleImage={true}
-                  withPreview={true}
-                  withLabel={false}
-                  onChange={profilePictureUploadHandler}
-                />
-                 
-                  
-                 <Button
-                    variant="primary"
-                    className="rounded-pill"
-                    style={{ width: "60%" }}
-                    onClick={postProfilePictureHandler}
-                  >
-                    Save Picture 
-                  </Button>
+      
            
          
                  
