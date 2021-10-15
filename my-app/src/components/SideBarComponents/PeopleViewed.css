@@ -7,6 +7,14 @@ h6{
     width: 50px;
     border-radius: 50%;
 }
+.img{
+    height: 50px;
+    width: 50px;
+}
+
+.titleMain{
+    color:black
+}
 
 .mainBox{
     margin-top: 100px;

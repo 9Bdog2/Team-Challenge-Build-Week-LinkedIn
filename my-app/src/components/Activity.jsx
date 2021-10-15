@@ -4,10 +4,10 @@ const Activity = () => {
   return (
     <>
       <Card
-        className="Activity p-2
+        className="mainBox mt-0 Activity p-2
       "
       >
-        <Card.Body className=" " style={{ fontSize: "20px" }}>
+        <Card.Body className="titleMain " style={{ fontSize: "20px" }}>
           Activity
           <Button
             variant="outline-secondary "

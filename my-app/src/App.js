@@ -18,7 +18,6 @@ import PostFeedComponent from "./components/PostFeedComponent";
 import LeftComponent from "./components/LeftComponent";
 import Article from "./components/Article";
 
-
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import FeedLeftSide from "./components/FeedLeftSide";
 
@@ -31,7 +30,6 @@ const ProfileView = () => (
         <ExperienceLI />
         <Interests />
         <Skills />
-        <Interests />
       </Col>
       <Col md={4}>
         <Sidebar />
@@ -40,56 +38,61 @@ const ProfileView = () => (
   </Container>
 );
 
+const FeedView = () => {
+  <Container>
+    <Row>
+      <Col xs={3}>
+        <FeedLeftSide />
+      </Col>
+
+      <Col className="justify-content-center d-flex" xs={6}>
+        <Row>
+          <Col xs={10}>
+            <PostFeedComponent className="marginB" />
+
+            <Article />
+          </Col>
+        </Row>
+      </Col>
+
+      <Col xs={3}>
+        <LeftComponent />
+      </Col>
+    </Row>
+  </Container>;
+};
+
 function App() {
   return (
     <>
       <Router>
-
         <TopNavbar />
 
         <Route path="/user/:id" component={ProfileView} />
-       
 
-
-      
-      
-            
+        <Route path="/feed/:id" component={FeedView} />
 
         <Container>
           <Row>
-          <Col  xs={3}>
-           
-                <FeedLeftSide />
-            </Col>
-          
-          <Col className='justify-content-center d-flex' xs={6}>
-           <Row>
-
-
-            < Col xs={12}>
-           <PostFeedComponent className='marginB'/>
-
-           <Article />
-           </Col>
-           
-           </Row>
-              
-
-            
-            
-           
-
+            <Col xs={3}>
+              <FeedLeftSide />
             </Col>
 
+            <Col className="justify-content-center d-flex" xs={6}>
+              <Row>
+                <Col xs={12}>
+                  <PostFeedComponent className="marginB" />
 
-            <Col  xs={3}>
-            <LeftComponent/>
-       </Col>
+                  <Article />
+                </Col>
+              </Row>
+            </Col>
 
-
+            <Col xs={3}>
+              <LeftComponent />
+            </Col>
           </Row>
         </Container>
-
 
         <BottomFooter />
       </Router>

@@ -51,13 +51,15 @@ function TopNavbar() {
             </div>
             <div className="top_icons_container">
               <span>
-                <img
+                <a href='/user/6163e31ca890cc0015cf07c9/'>
+                <img 
                   src={small_profile_picture}
                   className="logo"
                   width={25}
                   height={25}
                   alt="profile"
                 />
+                </a>
               </span>
               <NavDropdown title="Me" id="basic-nav-dropdown" className="top_link_container">
                 <NavDropdown.Divider />

@@ -6,7 +6,8 @@ import ExperienceForm from "./ExperienceForm";
 import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./ExperienceLI.css";
-import EditExperienceForm from "./EditExperienceForm";
+import ExperienceItem from "./ExperienceItem";
+import ImageUploader from "react-images-upload";
 
 class ExperienceLI extends React.Component {
   state = {
@@ -44,11 +45,7 @@ class ExperienceLI extends React.Component {
     }
   };
 
-  getParams = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
-    return id;
-  };
+ 
 
   componentDidMount = () => {
     this.fetchData("6163e31ca890cc0015cf07c9");
@@ -56,7 +53,7 @@ class ExperienceLI extends React.Component {
   };
   render() {
     return (
-      <div className="mainBox">
+      <div className="mainBox mt-4">
         <div className="d-flex justify-content-between align-items-end ">
           <h5 className="titleExperience">{this.props.title} Experiences</h5>
           <Icon.Plus
@@ -73,51 +70,32 @@ class ExperienceLI extends React.Component {
         <Router>
           <ListGroup>
             {this.state.fetchedExperience.length > 0 &&
-              this.state.fetchedExperience.map((e) => {
+              this.state.fetchedExperience.map((e,) => {
                 return (
-                  <ListGroup.Item className="listElement" key={e._id}>
-                    <Link
-                      to={"/?id=" + e._id}
-                      onClick={() => {
-                        this.setState({
-                          ...this.state,
-                          showEditExperience: true,
-                          selectedExperience: this.getParams(),
-                        });
-                        console.log("thisone", this.state.selectedExperience);
-                      }}
+                  <>
+                  <Link
+                      to={"/user/" +'6163e31ca890cc0015cf07c9'+ "/?id=" + e._id}
+                      
+                    
                     >
-                      <a className={"positionJob"}>
-                        <h6 className="positionJob">{e.role}</h6>
-                        <p>{e.company} </p>
-                        <p>{e.startDate + " -  " + e.endDate}</p>
-                        <p>{e.area} </p>
-                      </a>
-                    </Link>
-                  </ListGroup.Item>
+                    
+                  </Link>
+
+                  <ExperienceItem
+                                      
+                  experience={e}
+                  editModal={true}
+                  userID={e._id}
+                  />
+                  </>
                 );
               })}
           </ListGroup>
+         
         </Router>
 
         <>
-          <Modal
-            show={this.state.showEditExperience}
-            onHide={() => {
-              this.setState({
-                ...this.state,
-                showEditExperience: false,
-              });
-            }}
-            animation={true}
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>Edit Experience</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <EditExperienceForm id={this.state.selectedExperience} />
-            </Modal.Body>
-          </Modal>
+          
 
           <Modal
             show={this.state.showAddExperience}
@@ -131,9 +109,22 @@ class ExperienceLI extends React.Component {
           >
             <Modal.Header closeButton>
               <Modal.Title>Add Experience</Modal.Title>
+             
+              
             </Modal.Header>
             <Modal.Body>
+            <ImageUploader
+                  withIcon={false}
+                  buttonText="Upload image"
+                  imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                  maxFileSize={5242880}
+                  singleImage={true}
+                  withPreview={true}
+                  withLabel={false}
+                 
+                />
               <ExperienceForm />
+              
             </Modal.Body>
           </Modal>
         </>

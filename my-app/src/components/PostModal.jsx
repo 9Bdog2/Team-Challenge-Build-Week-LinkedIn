@@ -122,6 +122,7 @@ class PostModal extends React.Component {
           >
             Post
           </Button>
+
         </Modal.Body>
       </Modal>
     );

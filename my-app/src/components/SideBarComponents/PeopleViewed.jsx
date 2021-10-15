@@ -62,7 +62,7 @@ class PeopleViewed extends React.Component {
               return (
                 <ListGroup.Item className="listElement" key={e._id}>
                   <Link className={"d-flex"} to={`/user/${e._id}`}>
-                    <img src={e.image} />
+                    <img className={'imgUser'} src={e.image} />
 
                     <p className="name">
                       <span>{e.name + e.surname}</span>
