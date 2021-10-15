@@ -21,7 +21,7 @@ const LeftComponent = () => {
                 alt="linkedin"
                 style={{ width: "15px" }}
               />
-              <p className="mb-1" style={{ fontSize: "11px" }}>
+              <p className="mb-1" style={{ fontSize: "11px", color: "grey" }}>
                 Chairman and CEO at Microsoft
               </p>
               <Button variant="outline-secondary" className="follow">
@@ -44,7 +44,7 @@ const LeftComponent = () => {
                 alt="linkedin"
                 style={{ width: "15px" }}
               />
-              <p className="mb-1" style={{ fontSize: "11px" }}>
+              <p className="mb-1" style={{ fontSize: "11px", color: "grey" }}>
                 Optimistic Author at Simon Sinek inc.
               </p>
               <Button variant="outline-secondary" className="follow">
@@ -66,7 +66,7 @@ const LeftComponent = () => {
                 alt="linkedin"
                 style={{ width: "15px" }}
               />
-              <p className="mb-1" style={{ fontSize: "11px" }}>
+              <p className="mb-1" style={{ fontSize: "11px", color: "grey" }}>
                 Co-chair,Bill and Melinda Gates
               </p>
               <Button variant="outline-secondary" className="follow">
@@ -83,7 +83,57 @@ const LeftComponent = () => {
           </strong>
         </Dropdown.Item>
       </div>
-    
+
+      <div className="todaystopcourses">
+        <h6>Today's top courses</h6>
+        <Dropdown.Item
+          className="p-0"
+          eventKey="4"
+          style={{ fontSize: "13px" }}
+        >
+          <h6 className="p-0 m-0">1. Unconscious Bias</h6>
+          <p
+            className="p-0 m-0 pl-3"
+            style={{ fontSize: "13px", color: "grey" }}
+          >
+            Stacey Gordan
+          </p>
+        </Dropdown.Item>
+
+        <Dropdown.Item
+          className="p-0"
+          eventKey="4"
+          style={{ fontSize: "13px" }}
+        >
+          <h6 className="p-0 m-0">2. Being an Effective Team Member</h6>
+          <p
+            className="p-0 m-0 pl-3"
+            style={{ fontSize: "13px", color: "grey" }}
+          >
+            Daisy Lovelace
+          </p>
+        </Dropdown.Item>
+        <Dropdown.Item
+          className="p-0"
+          eventKey="4"
+          style={{ fontSize: "13px" }}
+        >
+          <h6 className="p-0 m-0">3. Communication Foundations</h6>
+          <p
+            className="p-0 m-0 pl-3"
+            style={{ fontSize: "13px", color: "grey" }}
+          >
+            Brenda Bailey-Hughes and Tatiana Kolovou
+          </p>
+        </Dropdown.Item>
+        <Dropdown.Item eventKey="4" style={{ fontSize: "13px", color: "grey" }}>
+          <strong>
+            {" "}
+            Show more on LinkedIn <i class="fas fa-arrow-right "></i>
+          </strong>
+        </Dropdown.Item>
+      </div>
+
       <div className="footerimg">
         <img
           src="https://www.sendiancreations.com/wp-content/uploads/2019/08/LinkedIn-Marketing.jpg"
