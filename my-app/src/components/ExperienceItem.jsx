@@ -84,7 +84,9 @@ const ExperienceItem = (props) => {
     let date = new Date(query)
     return date.getUTCFullYear()
   }
-
+  React.useEffect(() => {
+    props.update(true) //taken
+  }, [openModal]);
   React.useEffect(() => {
     fetchExperienceImage(); //taken
   }, []);
@@ -149,9 +151,9 @@ const ExperienceItem = (props) => {
             
            
               <EditExperienceForm 
-              id={id}
+              id={id} setShow={(value)=>showModal(value)}/>
 
-               />
+               
 
                  
 

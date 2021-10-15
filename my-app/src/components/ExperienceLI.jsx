@@ -14,6 +14,7 @@ class ExperienceLI extends React.Component {
     showAddExperience: false,
     showEditExperience: false,
     selectedExperience: "",
+   
   };
 
 
@@ -58,6 +59,16 @@ class ExperienceLI extends React.Component {
     }
   }
 
+  componentDidUpdate = (prevState) => {
+    const id = this.props.match.params.id;
+
+      if(prevState.showEditExperience !== this.state.showEditExperience){
+
+         this.fetchData(id);
+      }
+  }
+
+
   componentDidMount = () => {
     const id = this.props.match.params.id;
 
@@ -65,7 +76,6 @@ class ExperienceLI extends React.Component {
     
 
     this.fetchData(id);
-    // this.addExperiencePost('6163e31ca890cc0015cf07c9', obj )
   };
   render() {
     return (
@@ -102,7 +112,10 @@ class ExperienceLI extends React.Component {
                   experience={e}
                   editModal={true}
                   userID={e._id}
-                  />
+                  update={(value)=>this.setState({
+                    ...this.state,
+                    showEditExperience:value})}/>
+                  
                   </>
                 );
               })}
@@ -129,7 +142,7 @@ class ExperienceLI extends React.Component {
               
             </Modal.Header>
             <Modal.Body>
-            <ExperienceForm/>
+            <ExperienceForm setShow={(value)=>this.setState({showEditExperience:value})}/>/>
               
             </Modal.Body>
           </Modal>

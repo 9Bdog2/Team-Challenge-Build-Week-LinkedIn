@@ -268,6 +268,7 @@ componentDidMount = () =>{
           
           <Button variant="primary"  onClick={()=>{
                 this.editExperience(this.state.addExperience,  this.props.id)
+                this.props.setShow(false)
           }}>
             Save
           </Button>
@@ -275,6 +276,7 @@ componentDidMount = () =>{
             variant="danger"
             onClick={() => {
               this.deleteExperience(this.props.id);
+              this.props.setShow(false)
             }}
           >
             Delete

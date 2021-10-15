@@ -37,7 +37,7 @@ class PostModal extends React.Component {
       );
       if (response.ok) {
 
-        alert("posted");
+        
         const post = await response.json(); // I need post id from created post in order to send a second request to post image
 
         // Sending second request to post image
@@ -120,6 +120,7 @@ class PostModal extends React.Component {
             className="pButton"
             onClick={() => {
               this.postData(this.state.text);
+              this.hideModal();
             }}
           >
             Post
