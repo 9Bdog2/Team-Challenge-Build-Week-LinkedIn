@@ -12,6 +12,7 @@ export default function Profilejumbotron() {
   const params = useParams()
   const [data, setData] = useState([]);
   const [showUpload, setShowUpload] = useState(false)
+  const [imageUpload, setImageUpload] = useState();
 
   useEffect(() => {
     fetchProfile();
@@ -20,6 +21,8 @@ export default function Profilejumbotron() {
   useEffect(()=> {
     fetchProfile()
   }, [params.id])
+
+  
 
   const fetchProfile = async () => {
     try {
@@ -34,8 +37,9 @@ export default function Profilejumbotron() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(params);
+        
         setData(data);
+        
       } else {
         console.log("Something went wrong with the PROFILE request");
       }
@@ -43,12 +47,10 @@ export default function Profilejumbotron() {
       console.log(error);
     }
   };
-  const [imageUpload, setImageUpload] = useState();
-  const [isUploadWindowOpen, setIsUploadWindowOpen] = useState(true);
 
-  const openUploadWindowHandler = () => {
-      setIsUploadWindowOpen(!isUploadWindowOpen);
-    };
+  
+
+  
   
     const profilePictureUploadHandler = (picture) => {
       setImageUpload(picture);
@@ -56,8 +58,9 @@ export default function Profilejumbotron() {
  
   const postProfilePictureHandler = async () => {
     let formData = new FormData();
-    let blob = new Blob([imageUpload[0]], { type: "img/jpeg" });
-    formData.append("profile", blob);
+
+        formData.append("profile" , imageUpload)
+    console.log(formData)
 
     try {
       let response = await fetch(
@@ -71,10 +74,23 @@ export default function Profilejumbotron() {
            },
         }
       );
+      if (response.ok) {
+        fetchProfile()
+        setShowUpload(false)
+
+
+      }
     } catch (err) {
       console.log(err);
     }
   };//taken
+
+  const TargetFile = (e) => {
+    console.log("Event", e.target.files[0]);
+    if (e.target && e.target.files[0]) {
+      setImageUpload(e.target.files[0]);
+    }
+  };
 
   return (
     <Jumbotron className="jumboL">
@@ -87,21 +103,20 @@ export default function Profilejumbotron() {
 
       <div className="mt-2 secondSection">
       <div className="image-upload" >
-  <label for="file-input">
+  <label for="file-input" onClick={()=>{
+      setShowUpload(true)
+  }}>
   <img  className="IMAGE" src={data.image} alt="profile picture" />
   </label>
 
-  <input id="file-input" style={{display: 'none'}} type="file" onChange={postProfilePictureHandler} />
+  <input id="file-input" style={{display: 'none'}} type="file" onChange={TargetFile} />
 </div>
       
-                       <Button
-                        variant="primary"
-                        className="rounded-pill"
-                        style={{ width: "60%" }}
-                        onClick={postProfilePictureHandler}
-                      >
-                        Save Picture 
+                     { showUpload === true &&
+                        <Button className="connectButton" onClick={postProfilePictureHandler} variant="primary">
+                        Upload
                       </Button>
+                     }
        
 
         {/* find class for bringing image to front */}

@@ -87,6 +87,7 @@ const ExperienceItem = (props) => {
   React.useEffect(() => {
     props.update(true) //taken
   }, [openModal]);
+  
   React.useEffect(() => {
     fetchExperienceImage(); //taken
   }, []);
