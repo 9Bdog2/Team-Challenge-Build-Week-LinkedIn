@@ -2,7 +2,8 @@ import * as Icon from "react-bootstrap-icons";
 import small_profile_picture from "../assets/small_profile_picture.jpg";
 import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import ImageUploader from "react-images-upload";
+import "./css/Article.css";
+
 
 function Article() {
   const [data, setData] = useState([]);
@@ -97,7 +98,7 @@ function Article() {
                     </p>
                   </div>
                 </Col>
-                <Col md={2}>
+                <Col md={2} className="follow_button">
                   <button type="button" className="btn btn-light">
                     + Follow
                   </button>
