@@ -19,7 +19,8 @@ import LeftComponent from "./components/LeftComponent";
 import Article from "./components/Article";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import FeedLeftSide from "./components/FeedLeftSide";
+import FeedLeftSide from "./components/NewsFeedLeftSection/FeedLeftSide";
+import EditProfilePicture from "./components/NewsFeedLeftSection/EditProfilePicture";
 
 const ProfileView = () => (
   <Container>

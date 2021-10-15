@@ -80,6 +80,14 @@ const ExperienceItem = (props) => {
     setImageUpload(picture);
   };
 
+  const converDates = (query)=>{
+    let date = new Date(query)
+    return date.getUTCFullYear()
+  }
+  React.useEffect(() => {
+    props.update(true) //taken
+  }, [openModal]);
+  
   React.useEffect(() => {
     fetchExperienceImage(); //taken
   }, []);
@@ -100,10 +108,15 @@ const ExperienceItem = (props) => {
       
       
     }} className={"positionJob"}>
+
+
+      {
+        
+      }
                     
                     <h6 className="positionJob">{props.experience.role}</h6>
                     <p>{props.experience.company} </p>
-                    <p>{props.experience.startDate + " -  " + props.experience.endDate}</p>
+                    <p>{converDates(props.experience.startDate) + " -  " + converDates(props.experience.endDate)}</p>
                     <p>{props.experience.area} </p>
                   </a>
 
@@ -127,26 +140,7 @@ const ExperienceItem = (props) => {
             <Modal.Body>
            
             
-            <ImageUploader
-                  withIcon={false}
-                  buttonText="Upload image"
-                  imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-                  maxFileSize={5242880}
-                  singleImage={true}
-                  withPreview={true}
-                  withLabel={false}
-                  onChange={profilePictureUploadHandler}
-                />
-                 
-                  
-                 <Button
-                    variant="primary"
-                    className="rounded-pill"
-                    style={{ width: "60%" }}
-                    onClick={postProfilePictureHandler}
-                  >
-                    Save Picture 
-                  </Button>
+      
            
          
                  
@@ -158,9 +152,9 @@ const ExperienceItem = (props) => {
             
            
               <EditExperienceForm 
-              id={id}
+              id={id} setShow={(value)=>showModal(value)}/>
 
-               />
+               
 
                  
 

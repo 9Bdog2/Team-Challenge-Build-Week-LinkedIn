@@ -1,4 +1,5 @@
 import React from "react";
+import "./FeedLeftSide.css"
 import {
   Container,
   Row,
@@ -9,7 +10,8 @@ import {
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FcBookmark } from 'react-icons/fc'
+import { FcBookmark } from "react-icons/fc";
+import EditPictureModal from "./EditPictureModal";
 
 export default function FeedLeftSide() {
   const params = useParams();
@@ -19,9 +21,9 @@ export default function FeedLeftSide() {
     fetchProfile();
   }, []);
 
-//   useEffect(() => {
-//     fetchProfile();
-//   }, [params.id]);
+  //   useEffect(() => {
+  //     fetchProfile();
+  //   }, [params.id]);
 
   const fetchProfile = async () => {
     try {
@@ -51,27 +53,42 @@ export default function FeedLeftSide() {
       <Row>
         <Col>
           <Card className="mainBox">
-            <Card.Img className="img-fluid" variant="top" src="https://picsum.photos/203/54?grayscale" />
-            <Card.Body className=" cardProfile 
-">
-                <img className="imgUser imgProfileSidebar" src={data.image} alt="" />
-              <Card.Title style = {{color: "black"}}><p>{data.name} {data.surname}</p></Card.Title>
-              <Card.Text>
-                {data.title}
-              </Card.Text>
+            <Card.Img
+              className="img-fluid"
+              variant="top"
+              src="https://picsum.photos/203/54?grayscale"
+            />
+            <Card.Body
+              className=" cardProfile 
+"
+            >
+              <img
+                className="imgUser imgProfileSidebar"
+                src={data.image}
+                alt="profile"
+              />
+              <Card.Title style={{ color: "black" }}>
+                <p>
+                  {data.name} {data.surname}
+                </p>
+              </Card.Title>
+              
+              <Card.Text>{data.title}</Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
               <ListGroupItem>Who viewed your profile </ListGroupItem>
               <ListGroupItem>Views of your post</ListGroupItem>
               <ListGroupItem>Access exclusive tools & insights</ListGroupItem>
-              <ListGroupItem className="font-weight-bold" style = {{color: "black"}}><FcBookmark />Try Premium for free</ListGroupItem>
+              <ListGroupItem
+                className="font-weight-bold"
+                style={{ color: "black" }}
+              >
+                <FcBookmark />
+                Try Premium for free
+              </ListGroupItem>
             </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Card Link</Card.Link>
-            </Card.Body>
+           
           </Card>
-          {/* <h1>SIDEBAR PENDING...</h1> */}
-          {/* <img src="https://picsum.photos/300/300" alt="placeholder banner" /> */}
         </Col>
       </Row>
     </Container>
