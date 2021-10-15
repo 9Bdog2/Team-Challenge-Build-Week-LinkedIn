@@ -79,6 +79,7 @@ function Article() {
                       </b>
                       &bull;
                       <small>2nd</small>
+                      &bull;
                       {data[i].user.area}
                     </p>
                   </div>
