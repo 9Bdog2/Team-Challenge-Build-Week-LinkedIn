@@ -46,7 +46,7 @@ class PostModal extends React.Component {
           `https://striveschool-api.herokuapp.com/api/posts/${post._id}`,
           {
             body: formData, // in the body sending only formData with  file inside
-            method: "POST",
+          method: "POST",
             headers: new Headers({
               Authorization:
                 "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTYzZTMxY2E4OTBjYzAwMTVjZjA3YzkiLCJpYXQiOjE2MzM5MzYxNTcsImV4cCI6MTYzNTE0NTc1N30.cQb5Rq2bVKtljqwRew41uKAJ7AUi3fQitiFeytDaAgQ"

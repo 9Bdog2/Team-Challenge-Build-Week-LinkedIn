@@ -36,7 +36,7 @@ const Skills = () => {
           <Card.Body>
             <Row className="d-flex"> 
               <Col md={8}>
-                <h4 className="titleMain">Skills & endorsements</h4>
+                <p className="titleExperience" style={{ fontSize: "20px" }}>Skills & endorsements</p>
               </Col>
               <Col md={4}>
                
