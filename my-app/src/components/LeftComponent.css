@@ -1,98 +1,94 @@
 .leftcomponent {
-  width: 320px;
-  margin-top: 100px;
+   
+    
+    margin-top: 100px;
 
-  border-radius: 25px;
-  background-color: white;
-}
-.addfeed {
-  box-shadow: 0.1px 0.1px 2px grey !important;
-  position: relative;
-  padding: 10px;
-  margin-top: 10px;
-  top: 100%;
-  width: 100%;
-  border-radius: 10px;
-  background-color: #fff;
-}
-.follow {
-  box-shadow: 0.1px 0.1px 2px grey !important;
-  width: 100px;
-  padding: 3px;
-  border-radius: 30px;
-}
-
-.todaystopcourses {
-  box-shadow: 0.1px 0.1px 2px grey !important;
-  position: relative;
-  padding: 10px;
-  margin-top: 10px;
-  top: 100%;
-  width: 100%;
-  border-radius: 10px;
-  background-color: #fff;
-}
-
-.footerimg {
-  box-shadow: 0.1px 0.1px 2px grey !important;
-  position: relative;
-  padding: 10px;
-  margin-top: 10px;
-  top: 100%;
-  width: 100%;
-  border-radius: 10px;
-  background-color: #fff;
-}
-
-.footer {
-  box-shadow: 0.1px 0.1px 2px grey !important;
-  position: relative;
-  padding: 10px;
-  margin-top: 10px;
-  top: 100%;
-  width: 100%;
-  border-radius: 10px;
-  background-color: #fff;
-  color: black;
-}
-
-.about:hover {
-  cursor: pointer;
-  color: blue;
-  text-decoration: blue;
-}
-
-.accessibility:hover {
-  cursor: pointer;
-  color: blue;
-  text-decoration: blue;
-}
-
-.helpcenter:hover {
-  cursor: pointer;
-  color: blue;
-}
-.privacy:hover {
-  cursor: pointer;
-  color: blue;
-}
-.choices:hover {
-  cursor: pointer;
-  color: blue;
-}
-.advertising:hover {
-  cursor: pointer;
-  color: blue;
-}
-.business:hover {
-  cursor: pointer;
-  color: blue;
-}
-.add:hover {
-  cursor: pointer;
-  color: blue;
-}
-.more:hover {
-  cursor: pointer;
-  color: blue;
-}
+   
+    border-radius: 10px;
+    background-color: hsl(267, 31%, 94%);
+  }
+  .addfeed {
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+    top: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  .follow {
+    width: 100px;
+    padding: 3px;
+    border-radius: 30px;
+  }
+  
+  .todaystopcourses {
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+    top: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .footerimg {
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+    top: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .footer {
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+    top: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .about:hover {
+    cursor: pointer;
+    color: blue;
+    text-decoration: blue;
+  }
+  
+  .accessibility:hover {
+    cursor: pointer;
+    color: blue;
+    text-decoration: blue;
+  }
+  
+  .helpcenter:hover {
+    cursor: pointer;
+    color: blue;
+  }
+  .privacy:hover {
+    cursor: pointer;
+    color: blue;
+  }
+  .choices:hover {
+    cursor: pointer;
+    color: blue;
+  }
+  .advertising:hover {
+    cursor: pointer;
+    color: blue;
+  }
+  .business:hover {
+    cursor: pointer;
+    color: blue;
+  }
+  .add:hover {
+    cursor: pointer;
+    color: blue;
+  }
+  .more:hover {
+    cursor: pointer;
+    color: blue;
+  }
