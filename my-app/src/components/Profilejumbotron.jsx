@@ -31,7 +31,7 @@ export default function Profilejumbotron() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
+        console.log(params);
         setData(data);
       } else {
         console.log("Something went wrong with the PROFILE request");
@@ -55,8 +55,8 @@ export default function Profilejumbotron() {
         <div>{data.title}</div>
         <p>{data.area}</p>
 
-        <ul style={{ listStyleType: "none" }}>
-          <a>200 connections</a>
+        <ul className='pl-0' style={{ listStyleType: "none" }}>
+          <a >200 connections</a>
         </ul>
 
         <p>{data.bio}</p>

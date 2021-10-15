@@ -3,7 +3,7 @@ import * as Icon from "react-bootstrap-icons";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import ExperienceForm from "./ExperienceForm";
-import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Link, useParams ,withRouter  } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 import "./ExperienceLI.css";
 import ExperienceItem from "./ExperienceItem";
@@ -16,7 +16,11 @@ class ExperienceLI extends React.Component {
     selectedExperience: "",
   };
 
+
   fetchData = async (query) => {
+    
+
+
     const url =
       "https://striveschool-api.herokuapp.com/api/profile/" +
       query +
@@ -44,10 +48,23 @@ class ExperienceLI extends React.Component {
     }
   };
 
- 
+  componentDidUpdate = (prevProps) =>{
+    const id = this.props.match.params.id;
+
+    if(prevProps.match.params.id !== id){
+      this.fetchData(id);
+
+
+    }
+  }
 
   componentDidMount = () => {
-    this.fetchData("6163e31ca890cc0015cf07c9");
+    const id = this.props.match.params.id;
+
+   console.log(id, 'this')
+    
+
+    this.fetchData(id);
     // this.addExperiencePost('6163e31ca890cc0015cf07c9', obj )
   };
   render() {
@@ -122,4 +139,4 @@ class ExperienceLI extends React.Component {
   }
 }
 
-export default ExperienceLI;
+export default withRouter(ExperienceLI);
