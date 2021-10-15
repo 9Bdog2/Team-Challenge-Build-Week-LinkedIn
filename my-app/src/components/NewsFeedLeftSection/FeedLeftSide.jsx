@@ -72,7 +72,7 @@ export default function FeedLeftSide() {
                   {data.name} {data.surname}
                 </p>
               </Card.Title>
-              <EditPictureModal/>
+              
               <Card.Text>{data.title}</Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
@@ -87,9 +87,7 @@ export default function FeedLeftSide() {
                 Try Premium for free
               </ListGroupItem>
             </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Card Link</Card.Link>
-            </Card.Body>
+           
           </Card>
         </Col>
       </Row>
