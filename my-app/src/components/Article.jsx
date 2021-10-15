@@ -36,6 +36,7 @@ function Article() {
 
   return (
     <>
+
       {data.slice(0, 8).map((element, i) => (
         <Container className="mainBox mt-1">
           <Card>
@@ -138,43 +139,45 @@ function Article() {
               </Col>
             </Row>
 
-            <Row>
-              <Col md={3} className="justify-content-spread ">
-                <button type="button" className="btn btn-light">
-                  <div className="d-flex justify-content-center align-items-baseline">
-                    <Icon.HandThumbsUp />
-                    <p className="ml-3">Like</p>
-                  </div>
-                </button>
-              </Col>
-              <Col md={3}>
-                <button type="button" className="btn btn-light">
-                  <div className="d-flex justify-content-center align-items-baseline">
-                    <Icon.ChatText />
-                    <p className="ml-3">Comment</p>
-                  </div>
-                </button>
-              </Col>
-              <Col md={3}>
-                <button type="button" className="btn btn-light">
-                  <div className="d-flex justify-content-center align-items-baseline">
-                    <Icon.Arrow90degRight />
-                    <p className="ml-3">share</p>
-                  </div>
-                </button>
-              </Col>
-              <Col md={3}>
-                <button type="button" className="btn btn-light">
-                  <div className="d-flex justify-content-center align-items-baseline">
-                    <Icon.Cursor />
-                    <p className="ml-3">send</p>
-                  </div>
-                </button>
-              </Col>
-            </Row>
-          </Card>
-        </Container>
-      ))}
+
+                <Row>
+                  <Col md={3} className="justify-content-spread ">
+                    <button type="button" className="btn btn-light">
+                      <div className="d-flex justify-content-center align-items-baseline">
+                        <Icon.HandThumbsUp />
+                        <p className="ml-3">Like</p>
+                      </div>
+                    </button>
+                  </Col>
+                  <Col md={3}>
+                    <button type="button" className="btn btn-light">
+                      <div className="d-flex justify-content-center align-items-baseline">
+                        <Icon.ChatText />
+                        <p className="ml-3">Comment</p>
+                      </div>
+                    </button>
+                  </Col>
+                  <Col md={3}>
+                    <button type="button" className="btn btn-light">
+                      <div className="d-flex justify-content-center align-items-baseline">
+                        <Icon.Arrow90degRight />
+                        <p className="ml-3">share</p>
+                      </div>
+                    </button>
+                  </Col>
+                  <Col md={3}>
+                    <button type="button" className="btn btn-light">
+                      <div className="d-flex justify-content-center align-items-baseline">
+                        <Icon.Cursor />
+                        <p className="ml-3">send</p>
+                      </div>
+                    </button>
+                  </Col>
+                </Row>
+              </Card>
+            </Container>
+          )
+      )}
     </>
   );
 }
