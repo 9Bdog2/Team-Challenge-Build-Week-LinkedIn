@@ -5,13 +5,30 @@ p {
   margin: 0px;
 }
 
-.follow_button{
-    display: contents;
+.follow_button {
+  display: contents;
 }
 
+.bottom_buttons {
+  border-top-style: outset;
+  
+}
+
+.upper_part {
+  border-bottom-style: inset;
+}
+
+.social_part {
+  font-size: 12px;
+}
+
+.content_writing{
+  font-size: 14px;
+}
+
+
+
 @media screen and (max-width: 973px) {
-  
-  
 }
 
 /* -------------------------------- */

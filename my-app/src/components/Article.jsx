@@ -4,7 +4,6 @@ import { Row, Col, Container, Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import "./css/Article.css";
 
-
 function Article() {
   const [data, setData] = useState([]);
 
@@ -25,7 +24,7 @@ function Article() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data, 'here');
+        console.log(data, "here");
         setData(data);
       } else {
         console.log("Something went wrong with the Posts request");
@@ -37,12 +36,11 @@ function Article() {
 
   return (
     <>
-
       {data.slice(0, 8).map((element, i) => (
         <Container className="mainBox mt-1">
           <Card>
             <Card.Body className="titleMain ">
-              <Row>
+              <Row className="upper_part">
                 <Col md={10}>
                   <div>
                     <p>
@@ -106,7 +104,7 @@ function Article() {
               </Row>
             </Card.Body>
             <Card.Body>
-              <p>
+              <p className="content_writing">
                 {data[i].text}
                 <button type="button" className="btn btn-light">
                   <small>...see more</small>
@@ -114,7 +112,6 @@ function Article() {
               </p>
               <img
                 src={data[i].image}
-                
                 style={{
                   borderRadius: "0%",
                   height: "100px",
@@ -125,14 +122,14 @@ function Article() {
             <Card.Body></Card.Body>
             <Row>
               <Col md={12}>
-                <div className="d-flex align-items-baseline">
-                  <button type="button" className="btn btn-light">
+                <div className="d-flex align-items-baseline  social_part">
+                  <button type="button" className="btn btn-light social_part">
                     <Icon.HandThumbsUp />
                   </button>
-                  <button type="button" className="btn btn-light">
+                  <button type="button" className="btn btn-light  social_part">
                     <Icon.Lightbulb />
                   </button>
-                  <button type="button" className="btn btn-light">
+                  <button type="button" className="btn btn-light  social_part">
                     <Icon.SuitHeart />
                   </button>
                   <p>23 &bull; 3 comments</p>
@@ -140,45 +137,43 @@ function Article() {
               </Col>
             </Row>
 
-
-                <Row>
-                  <Col md={3} className="justify-content-spread ">
-                    <button type="button" className="btn btn-light">
-                      <div className="d-flex justify-content-center align-items-baseline">
-                        <Icon.HandThumbsUp />
-                        <p className="ml-3">Like</p>
-                      </div>
-                    </button>
-                  </Col>
-                  <Col md={3}>
-                    <button type="button" className="btn btn-light">
-                      <div className="d-flex justify-content-center align-items-baseline">
-                        <Icon.ChatText />
-                        <p className="ml-3">Comment</p>
-                      </div>
-                    </button>
-                  </Col>
-                  <Col md={3}>
-                    <button type="button" className="btn btn-light">
-                      <div className="d-flex justify-content-center align-items-baseline">
-                        <Icon.Arrow90degRight />
-                        <p className="ml-3">share</p>
-                      </div>
-                    </button>
-                  </Col>
-                  <Col md={3}>
-                    <button type="button" className="btn btn-light">
-                      <div className="d-flex justify-content-center align-items-baseline">
-                        <Icon.Cursor />
-                        <p className="ml-3">send</p>
-                      </div>
-                    </button>
-                  </Col>
-                </Row>
-              </Card>
-            </Container>
-          )
-      )}
+            <Row className="bottom_buttons">
+              <Col md={3} className="justify-content-spread ">
+                <button type="button" className="btn btn-light">
+                  <div className="d-flex justify-content-center align-items-baseline">
+                    <Icon.HandThumbsUp />
+                    <p className="ml-3">Like</p>
+                  </div>
+                </button>
+              </Col>
+              <Col md={3}>
+                <button type="button" className="btn btn-light">
+                  <div className="d-flex justify-content-center align-items-baseline">
+                    <Icon.ChatText />
+                    <p className="ml-3">Comment</p>
+                  </div>
+                </button>
+              </Col>
+              <Col md={3}>
+                <button type="button" className="btn btn-light">
+                  <div className="d-flex justify-content-center align-items-baseline">
+                    <Icon.Arrow90degRight />
+                    <p className="ml-3">share</p>
+                  </div>
+                </button>
+              </Col>
+              <Col md={3}>
+                <button type="button" className="btn btn-light">
+                  <div className="d-flex justify-content-center align-items-baseline">
+                    <Icon.Cursor />
+                    <p className="ml-3">send</p>
+                  </div>
+                </button>
+              </Col>
+            </Row>
+          </Card>
+        </Container>
+      ))}
     </>
   );
 }
